@@ -8,8 +8,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;900&display=swap");
 
 :root {
-  --mainFont: "Poppins", sans-serif;
-  --mainBgColor: #cccccc80;
+  --mainFont: "Poppins", sans-serif !important;
+  --mainBgColor: #cccccc80 !important;
+  --primaryColor: #2e4260 !important;
 }
 
 body {
@@ -30,12 +31,24 @@ header {
 
 .banner {
   /* height: 250px; */
-  background-color: #29273f;
+  background-color: #2e4260;
   color: #fff;
 }
 
 .banner-container{
   padding: 65px 0;
+}
+
+.main-container{
+  padding: 15px 0;
+}
+
+.main-container .caption{
+  font-size: 22px;
+}
+
+.advertisement-segment{
+      box-shadow: 4px 0px 0 0 var(--primaryColor)!important;
 }
 
 /*CUSTOMS*/
@@ -49,4 +62,19 @@ header {
   background-color: transparent;
   border: 1px solid gray;
   color: #fff;
+}
+
+.p-3{
+  padding: 15px;
+}
+.px-3{
+  padding: 0 15px;
+}
+.py-3{
+  padding: 15px 0;
+}
+
+.primary-color{
+  background-color: var(--primaryColor)!important;
+  color: #fff!important;
 }
