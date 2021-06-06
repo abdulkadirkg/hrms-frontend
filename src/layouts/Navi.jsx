@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
 import { Container, Grid, Button } from "semantic-ui-react";
-import CityService from "../services/cityService";
 
 export default function Navi() {
 
