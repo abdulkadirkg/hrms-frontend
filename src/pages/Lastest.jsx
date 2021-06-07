@@ -1,4 +1,5 @@
-import { Button, Grid, Segment, Label, Icon } from "semantic-ui-react";
+import { faLiraSign, faMapMarkerAlt, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import AdvertisementService from "../services/advertisementService";
 
@@ -12,47 +13,80 @@ export default function Lastest() {
   }, []);
   return (
     <div>
-      <Button.Group>
-        <Button className="primary-color">Bu Ay</Button>
-        <Button.Or text="-" />
-        <Button className="primary-color">Bu Hafta</Button>
-        <Button.Or text="-" />
-        <Button className="primary-color">Bugün</Button>
-      </Button.Group>
-      <div className="py-3">
-        {advertisements.map((advertisement) => (
-          <Segment
-            className="advertisement-segment"
-            padded
-            key={advertisement.id}
-          >
-            <Grid>
-              <Grid.Column width={12}>
-                <Grid.Row>
-                  <h2>{advertisement.position.jobName}</h2>
-                  <p>{advertisement.jobDescription}</p>
-                  <Label color="grey">
-                    <Icon name="map marker alternate" />
-                    {advertisement.city.cityName}
-                  </Label>
-                  <Label color="grey">
-                    <Icon name="try" />
-                    {advertisement.salaryMin} - {advertisement.salaryMax}
-                  </Label>
-                  <Label color="grey">
-                    <Icon name="user plus" />
-                    {advertisement.positionCount}
-                  </Label>
-                </Grid.Row>
-              </Grid.Column>
-              <Grid.Column width={4}>
-                <Grid.Row>
-                    {advertisement.createdAt}
-                </Grid.Row>
-              </Grid.Column>
-            </Grid>
-          </Segment>
-        ))}
+      <div className="container">
+        <div className="row mt-5">
+          <div className="col-3">
+            <strong>
+              <h4 className="font-weight-bold">Filtreler</h4>
+            </strong>
+            <div className="border-main shadow-sm p-2">
+              <div className="accordion" id="accordionExample">
+                <div className="card">
+                  <div className="card-header p-0" id="headingOne">
+                    <h2 className="m-0">
+                      <button className="btn btn-sm btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
+                        Pozisyon
+                      </button>
+                    </h2>
+                  </div>
+
+                  <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" >
+                    <div className="card-body">Filtreler Buraya Gelecek</div>
+                  </div>
+                  
+                </div>
+                <div className="card">
+                  <div className="card-header p-0" id="headingTwo">
+                    <h2 className="m-0">
+                      <button className="btn btn-sm btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
+                        Şehir
+                      </button>
+                    </h2>
+                  </div>
+
+                  <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample" >
+                    <div className="card-body">Filtreler Buraya Gelecek</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-9">
+            <strong>
+              <h4 className="font-weight-bold">İlanlar</h4>
+            </strong>
+
+            <div className="advertisements">
+              {advertisements.map((advertisement) => (
+                <div className="advertisement" key={advertisement.id}>
+                  <div className="row">
+                    <div className="col-10">
+                      <span className="d-block">
+                        {advertisement.position.jobName}
+                      </span>
+                      <small>
+                        <p className="text-muted font-italic m-0">
+                          {advertisement.jobDescription}
+                        </p>
+                        <span className="btn-outline-secondary btn badge mr-1"><FontAwesomeIcon icon={faUser}/> {advertisement.positionCount}</span>
+                        <span className="btn-outline-secondary btn badge mr-1"><FontAwesomeIcon icon={faLiraSign}/> {advertisement.salaryMax}</span>
+                        <span className="btn-outline-secondary btn badge mr-1"><FontAwesomeIcon icon={faLiraSign}/> {advertisement.salaryMin}</span>
+                      </small>
+                    </div>
+                    <div className="col-2 my-auto">
+                      <button className="btn btn-sm btn-secondary"> <FontAwesomeIcon icon={faMapMarkerAlt} /> {advertisement.city.cityName}</button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+            </div>
+
+
+
+          </div>
+        </div>
       </div>
     </div>
   );

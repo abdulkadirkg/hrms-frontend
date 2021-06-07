@@ -5,7 +5,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap");
 
 :root {
   --mainFont: "Poppins", sans-serif !important;
@@ -19,62 +19,40 @@ body {
   height: 100vh;
 }
 
-header {
-  height: 100px;
-  width: 100vw;
-  padding: 15px;
-}
-
-.header-logo {
-  font-size: 22px;
-}
-
-.banner {
-  /* height: 250px; */
+.banner-section {
   background-color: #2e4260;
-  color: #fff;
+  padding: 95px 0;
 }
 
-.banner-container{
-  padding: 65px 0;
+.city-badge {
+  font-size: 11px;
+  margin-right: 4px;
 }
 
-.main-container{
-  padding: 15px 0;
+.advertisements .advertisement {
+  display: block;
+  background-color: #fff;
+  padding: 9px;
+  border-radius: 5px;
+  border-left: 3px solid #2e4260;
+  margin: 0 0 15px 0;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+  cursor: pointer;
 }
 
-.main-container .caption{
-  font-size: 22px;
+.advertisements .advertisement:hover {
+  background-color: #2e426015;
 }
 
-.advertisement-segment{
-      box-shadow: 4px 0px 0 0 var(--primaryColor)!important;
+/*CUSTOM*/
+.btn-secondary {
+  background-color: rgb(197, 197, 197);
+  border: none;
+  color: rgb(78, 78, 78);
 }
 
-/*CUSTOMS*/
-.border {
-  border: 1px solid #e9040480;
-}
-
-.ui.label{
-  margin: 4px 02px 0 0;
-  font-weight: 500!important;
-  background-color: transparent;
-  border: 1px solid gray;
-  color: #fff;
-}
-
-.p-3{
-  padding: 15px;
-}
-.px-3{
-  padding: 0 15px;
-}
-.py-3{
-  padding: 15px 0;
-}
-
-.primary-color{
-  background-color: var(--primaryColor)!important;
-  color: #fff!important;
+.border-main {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
 }
