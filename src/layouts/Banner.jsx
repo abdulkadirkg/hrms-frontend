@@ -23,18 +23,18 @@ export default function Banner() {
   return (
     <>
       <section className="banner-section">
-        <div className="container">
+        <div className="container border-main shadow-lg text-dark">
           <div className="form-row">
             <div className="col-xl-7">
               <input
                 type="text"
-                className="form-control"
+                className="form-control form-control-lg"
                 placeholder="Pozisyon Ara"
               />
               <div className="my-1 d-block">
                 {positions.map((position) => (
                   <small
-                    className="btn btn-sm btn-outline-light city-badge"
+                    className="btn btn-sm btn-light border border-none city-badge"
                     key={position.id}
                     value={position}
                   >
@@ -45,7 +45,7 @@ export default function Banner() {
             </div>
             <div className="col-xl-4">
               <select
-                className="custom-select mr-sm-2"
+                className="form-control-lg form-control mr-sm-2"
                 id="inlineFormCustomSelect"
               >
                 <option>Şehir Seçiniz</option>
@@ -56,12 +56,12 @@ export default function Banner() {
                 ))}
               </select>
               <div className="my-1">
-                <small className="btn btn-sm btn-outline-light city-badge">
+                <small className="btn btn-sm btn-light border border-none city-badge">
                   <FontAwesomeIcon icon={faMapMarkerAlt} /> Remote
                 </small>
                 {cities.map((city) => (
                   <small
-                    className="btn btn-sm btn-outline-light city-badge"
+                    className="btn btn-sm btn-light border border-none city-badge"
                     key={city.id}
                     value={city}
                   >
@@ -70,9 +70,10 @@ export default function Banner() {
                 ))}
               </div>
             </div>
-            <div className="col-xl-1">
-              <button className="btn btn-block btn-secondary">
-                <FontAwesomeIcon icon={faSearch} /> Ara</button>
+            <div className="col-xl-1 h-100">
+              <button className="btn btn-lg w-100 h-100 btn-main text-light">
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
             </div>
           </div>
         </div>

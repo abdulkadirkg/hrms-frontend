@@ -1,4 +1,11 @@
-import { faLiraSign, faMapMarkerAlt, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faFilter,
+  faLiraSign,
+  faLocationArrow,
+  faMapMarkerAlt,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import AdvertisementService from "../services/advertisementService";
@@ -19,85 +26,92 @@ export default function Lastest() {
             <strong>
               <h4 className="font-weight-bold ">Filtreler</h4>
             </strong>
-            <div className="border-main .d-md-none .d-xl-block shadow-sm p-2">
-              <div className="accordion" id="accordionExample">
-                <div className="card">
-                  <div className="card-header p-0" id="headingOne">
-                    <h2 className="m-0">
-                      <button
-                        className="btn btn-sm btn-block text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseOne"
-                        aria-expanded="false"
-                        aria-controls="collapseOne"
-                      >
-                        Pozisyon
-                      </button>
-                    </h2>
-                  </div>
-
-                  <div
-                    id="collapseOne"
-                    className="collapse"
-                    aria-labelledby="headingOne"
-                    data-parent="#accordionExample"
-                  >
-                    <div className="card-body">Filtreler Buraya Gelecek</div>
-                  </div>
+            <aside class="component--job-filter shadow-sm">
+              <form action="">
+                <div class="search mb-3">
+                  <input
+                    type="text"
+                    className="form-control shadow-sm"
+                    placeholder="Kelime İle Ara"
+                  />
                 </div>
-                <div className="card">
-                  <div className="card-header p-0" id="headingTwo">
-                    <h2 className="m-0">
-                      <button
-                        className="btn btn-sm btn-block text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="collapseTwo"
-                      >
-                        Şehir
-                      </button>
-                    </h2>
-                  </div>
-
-                  <div
-                    id="collapseTwo"
-                    className="collapse"
-                    aria-labelledby="headingTwo"
-                    data-parent="#accordionExample"
-                  >
-                    <div className="card-body">Filtreler Buraya Gelecek</div>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-header p-0" id="headingThree">
-                    <h2 className="m-0">
-                      <button
-                        className="btn btn-sm btn-block text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                      >
-                        Maaş Aralığı
-                      </button>
-                    </h2>
-                  </div>
-
-                  <div
-                    id="collapseThree"
-                    className="collapse"
-                    aria-labelledby="headingThree"
-                    data-parent="#accordionExample"
-                  >
-                    <div className="card-body">Filtreler Buraya Gelecek</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <hr className="mt-0" />
+                <h5 className="font-weight-bold">
+                  <FontAwesomeIcon icon={faFilter} /> İş Türleri
+                </h5>
+                <ul class="checkbox-list">
+                  <li>
+                    <label>
+                      <input type="checkbox" />
+                      <span class="checkbox"></span>
+                      <span class="text">Tümü</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" />
+                      <span class="checkbox"></span>
+                      <span class="text">Tam Zamanlı</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" />
+                      <span class="checkbox"></span>
+                      <span class="text">Yarı Zamanlı</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" checked />
+                      <span class="checkbox"></span>
+                      <span class="text">Freelance</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" />
+                      <span class="checkbox"></span>
+                      <span class="text">Stajyer</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" />
+                      <span class="checkbox"></span>
+                      <span class="text">Remote</span>
+                    </label>
+                  </li>
+                </ul>
+                <hr />
+                <h5 className="font-weight-bold">
+                  <FontAwesomeIcon icon={faLocationArrow} /> Konum
+                </h5>
+                <ul class="filter-form">
+                  <li>
+                    <label for="country">Ülke/Şehir</label>
+                    <select name="" id="country">
+                      <option value="">Türkiye</option>
+                      <option value="">Türkiye</option>
+                      <option value="">Türkiye</option>
+                      <option value="">Türkiye</option>
+                    </select>
+                  </li>
+                  <li>
+                    <label for="city">City</label>
+                    <select name="" id="city">
+                      <option value="">İstanbul</option>
+                      <option value="">Ankara</option>
+                      <option value="">İzmir</option>
+                      <option value="">Bursa</option>
+                    </select>
+                  </li>
+                  <li>
+                    <button type="submit">Uygula</button>
+                  </li>
+                </ul>
+              </form>
+            </aside>
           </div>
           <div className="col-lg-9">
             <strong>
@@ -105,40 +119,37 @@ export default function Lastest() {
             </strong>
 
             <div className="advertisements">
-              {advertisements.map((advertisement) => (
-                <div className="advertisement" key={advertisement.id}>
-                  <div className="row">
-                    <div className="col-9">
-                      <span className="d-block">
-                        {advertisement.position.jobName}
+              <ul class="component--job-items">
+                {advertisements.map((advertisement) => (
+                  <li className="shadow-sm">
+                    <a href="#">
+                      <span class="avatar">
+                        {advertisement.position.jobName[0]}
                       </span>
-                      <small>
-                        <p className="text-muted font-italic m-0">
+                      <span class="detail">
+                        <span class="title">
+                          {advertisement.position.jobName}
+                        </span>
+                        <span class="position">
                           {advertisement.jobDescription}
-                        </p>
-                        <span className="btn-outline-secondary btn badge mr-1">
-                          <FontAwesomeIcon icon={faUser} />
-                          {advertisement.positionCount}
                         </span>
-                        <span className="btn-outline-secondary btn badge mr-1">
-                          <FontAwesomeIcon icon={faLiraSign} />
-                          {advertisement.salaryMax}
-                        </span>
-                        <span className="btn-outline-secondary btn badge mr-1">
-                          <FontAwesomeIcon icon={faLiraSign} />
-                          {advertisement.salaryMin}
-                        </span>
-                      </small>
-                    </div>
-                    <div className="col my-auto">
-                      <button className="btn btn-block btn-sm btn-secondary">
-                        <FontAwesomeIcon icon={faMapMarkerAlt} />{" "}
+                      </span>
+                      <span class="location">
+                        <FontAwesomeIcon
+                          className="mr-1"
+                          icon={faMapMarkerAlt}
+                        />{" "}
                         {advertisement.city.cityName}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <div className="d-flex justify-content-center">
+                <a href="#" class="component--job-button">
+                  <span className="mr-3">Tüm İlanları Gör</span> <FontAwesomeIcon icon={faArrowRight} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
