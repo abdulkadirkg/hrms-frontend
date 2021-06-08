@@ -1,10 +1,8 @@
 import {
   faArrowRight,
   faFilter,
-  faLiraSign,
   faLocationArrow,
   faMapMarkerAlt,
-  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
@@ -26,9 +24,9 @@ export default function Lastest() {
             <strong>
               <h4 className="font-weight-bold ">Filtreler</h4>
             </strong>
-            <aside class="component--job-filter shadow-sm">
+            <aside className="component--job-filter shadow-sm">
               <form action="">
-                <div class="search mb-3">
+                <div className="search mb-3">
                   <input
                     type="text"
                     className="form-control shadow-sm"
@@ -39,47 +37,47 @@ export default function Lastest() {
                 <h5 className="font-weight-bold">
                   <FontAwesomeIcon icon={faFilter} /> İş Türleri
                 </h5>
-                <ul class="checkbox-list">
+                <ul className="checkbox-list">
                   <li>
                     <label>
                       <input type="checkbox" />
-                      <span class="checkbox"></span>
-                      <span class="text">Tümü</span>
+                      <span className="checkbox"></span>
+                      <span className="text">Tümü</span>
                     </label>
                   </li>
                   <li>
                     <label>
                       <input type="checkbox" />
-                      <span class="checkbox"></span>
-                      <span class="text">Tam Zamanlı</span>
+                      <span className="checkbox"></span>
+                      <span className="text">Tam Zamanlı</span>
                     </label>
                   </li>
                   <li>
                     <label>
                       <input type="checkbox" />
-                      <span class="checkbox"></span>
-                      <span class="text">Yarı Zamanlı</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      <input type="checkbox" checked />
-                      <span class="checkbox"></span>
-                      <span class="text">Freelance</span>
+                      <span className="checkbox"></span>
+                      <span className="text">Yarı Zamanlı</span>
                     </label>
                   </li>
                   <li>
                     <label>
                       <input type="checkbox" />
-                      <span class="checkbox"></span>
-                      <span class="text">Stajyer</span>
+                      <span className="checkbox"></span>
+                      <span className="text">Freelance</span>
                     </label>
                   </li>
                   <li>
                     <label>
                       <input type="checkbox" />
-                      <span class="checkbox"></span>
-                      <span class="text">Remote</span>
+                      <span className="checkbox"></span>
+                      <span className="text">Stajyer</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" />
+                      <span className="checkbox"></span>
+                      <span className="text">Remote</span>
                     </label>
                   </li>
                 </ul>
@@ -87,9 +85,9 @@ export default function Lastest() {
                 <h5 className="font-weight-bold">
                   <FontAwesomeIcon icon={faLocationArrow} /> Konum
                 </h5>
-                <ul class="filter-form">
+                <ul className="filter-form">
                   <li>
-                    <label for="country">Ülke/Şehir</label>
+                    <label htmlFor="country">Ülke/Şehir</label>
                     <select name="" id="country">
                       <option value="">Türkiye</option>
                       <option value="">Türkiye</option>
@@ -98,7 +96,7 @@ export default function Lastest() {
                     </select>
                   </li>
                   <li>
-                    <label for="city">City</label>
+                    <label htmlFor="city">City</label>
                     <select name="" id="city">
                       <option value="">İstanbul</option>
                       <option value="">Ankara</option>
@@ -119,22 +117,22 @@ export default function Lastest() {
             </strong>
 
             <div className="advertisements">
-              <ul class="component--job-items">
+              <ul className="component--job-items">
                 {advertisements.map((advertisement) => (
-                  <li className="shadow-sm">
-                    <a href="#">
-                      <span class="avatar">
+                  <li className="shadow-sm" key={advertisement.id}>
+                    <a href="/#">
+                      <span className="avatar">
                         {advertisement.position.jobName[0]}
                       </span>
-                      <span class="detail">
-                        <span class="title">
+                      <span className="detail">
+                        <span className="title">
                           {advertisement.position.jobName}
                         </span>
-                        <span class="position">
+                        <span className="position">
                           {advertisement.jobDescription}
                         </span>
                       </span>
-                      <span class="location">
+                      <span className="location">
                         <FontAwesomeIcon
                           className="mr-1"
                           icon={faMapMarkerAlt}
@@ -146,7 +144,7 @@ export default function Lastest() {
                 ))}
               </ul>
               <div className="d-flex justify-content-center">
-                <a href="#" class="component--job-button">
+                <a href="/#" className="component--job-button">
                   <span className="mr-3">Tüm İlanları Gör</span> <FontAwesomeIcon icon={faArrowRight} />
                 </a>
               </div>

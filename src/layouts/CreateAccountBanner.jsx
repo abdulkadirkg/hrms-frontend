@@ -14,11 +14,11 @@ export default function CreateAccountBanner() {
                 Hemen üye ol, kriterlerini belirle, aradığın işe ulaş. Kariyerin
                 parmaklarının ucunda...
               </p>
-              <blockquote class="blockquote">
-                <p class="mb-0 font-italic small font-weight-light">
+              <blockquote className="blockquote">
+                <p className="mb-0 font-italic small font-weight-light">
                   "Sevdiğin işi yaparsan, ömür boyu çalışmış olmazsın."
                 </p>
-                <footer class="blockquote-footer text-light">
+                <footer className="blockquote-footer text-light">
                   <cite title="Source Title">Çin Atasözü</cite>
                 </footer>
               </blockquote>
