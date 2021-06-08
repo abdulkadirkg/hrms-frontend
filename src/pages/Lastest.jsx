@@ -1,11 +1,10 @@
 import {
   faArrowRight,
-  faFilter,
-  faLocationArrow,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
+import Filters from "../layouts/Filters";
 import AdvertisementService from "../services/advertisementService";
 
 export default function Lastest() {
@@ -24,92 +23,7 @@ export default function Lastest() {
             <strong>
               <h4 className="font-weight-bold ">Filtreler</h4>
             </strong>
-            <aside className="component--job-filter shadow-sm">
-              <form action="">
-                <div className="search mb-3">
-                  <input
-                    type="text"
-                    className="form-control shadow-sm"
-                    placeholder="Kelime İle Ara"
-                  />
-                </div>
-                <hr className="mt-0" />
-                <h5 className="font-weight-bold">
-                  <FontAwesomeIcon icon={faFilter} /> İş Türleri
-                </h5>
-                <ul className="checkbox-list">
-                  <li>
-                    <label>
-                      <input type="checkbox" />
-                      <span className="checkbox"></span>
-                      <span className="text">Tümü</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      <input type="checkbox" />
-                      <span className="checkbox"></span>
-                      <span className="text">Tam Zamanlı</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      <input type="checkbox" />
-                      <span className="checkbox"></span>
-                      <span className="text">Yarı Zamanlı</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      <input type="checkbox" />
-                      <span className="checkbox"></span>
-                      <span className="text">Freelance</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      <input type="checkbox" />
-                      <span className="checkbox"></span>
-                      <span className="text">Stajyer</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      <input type="checkbox" />
-                      <span className="checkbox"></span>
-                      <span className="text">Remote</span>
-                    </label>
-                  </li>
-                </ul>
-                <hr />
-                <h5 className="font-weight-bold">
-                  <FontAwesomeIcon icon={faLocationArrow} /> Konum
-                </h5>
-                <ul className="filter-form">
-                  <li>
-                    <label htmlFor="country">Ülke/Şehir</label>
-                    <select name="" id="country">
-                      <option value="">Türkiye</option>
-                      <option value="">Türkiye</option>
-                      <option value="">Türkiye</option>
-                      <option value="">Türkiye</option>
-                    </select>
-                  </li>
-                  <li>
-                    <label htmlFor="city">City</label>
-                    <select name="" id="city">
-                      <option value="">İstanbul</option>
-                      <option value="">Ankara</option>
-                      <option value="">İzmir</option>
-                      <option value="">Bursa</option>
-                    </select>
-                  </li>
-                  <li>
-                    <button type="submit">Uygula</button>
-                  </li>
-                </ul>
-              </form>
-            </aside>
+            <Filters/>
           </div>
           <div className="col-lg-9">
             <strong>
