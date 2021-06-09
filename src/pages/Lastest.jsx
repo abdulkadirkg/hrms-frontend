@@ -15,6 +15,7 @@ export default function Lastest() {
       .getAdvertisements()
       .then((result) => setAdvertisements(result.data.data));
   }, []);
+  console.log(advertisements);
   return (
     <div>
       <div className="container">
@@ -23,7 +24,7 @@ export default function Lastest() {
             <strong>
               <h4 className="font-weight-bold ">Filtreler</h4>
             </strong>
-            <Filters/>
+            <Filters />
           </div>
           <div className="col-lg-9">
             <strong>
@@ -36,30 +37,38 @@ export default function Lastest() {
                   <li className="shadow-sm" key={advertisement.id}>
                     <a href="/#">
                       <span className="avatar">
-                        {advertisement.position.jobName[0]}
+                        {advertisement.position?.jobName[0]}
                       </span>
                       <span className="detail">
+                        <small className="text-muted">
+                          <b>{advertisement?.employer?.companyName}</b> -{" "}
+                          {advertisement?.employer?.webSite}
+                        </small>
                         <span className="title">
-                          {advertisement.position.jobName}
+                          {advertisement.position?.jobName}
                         </span>
                         <span className="position">
-                          {advertisement.jobDescription}
+                          {advertisement?.jobDescription}
                         </span>
+                        <small className="d-block text-secondary font-italic">1 Gün Önce</small>
                       </span>
                       <span className="location">
                         <FontAwesomeIcon
                           className="mr-1"
                           icon={faMapMarkerAlt}
                         />{" "}
-                        {advertisement.city.cityName}
+                        <span className="d-block">
+                          {advertisement.city?.cityName}
+                        </span>
                       </span>
                     </a>
                   </li>
                 ))}
               </ul>
               <div className="d-flex justify-content-center">
-                <a href="/#" className="component--job-button">
-                  <span className="mr-3">Tüm İlanları Gör</span> <FontAwesomeIcon icon={faArrowRight} />
+                <a href="/#" className="shadow component--job-button">
+                  <span className="mr-3">Tüm İlanları Gör</span>{" "}
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </a>
               </div>
             </div>

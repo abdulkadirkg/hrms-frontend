@@ -34,7 +34,7 @@ export default function Banner() {
               <div className="my-1 d-block">
                 {positions.map((position) => (
                   <small
-                    className="btn btn-sm btn-light border border-none city-badge"
+                    className="btn btn-sm btn-light mt-1 border border-none city-badge"
                     key={position.id}
                     value={position}
                   >
@@ -61,7 +61,7 @@ export default function Banner() {
                 </small>
                 {cities.map((city) => (
                   <small
-                    className="btn btn-sm btn-light border border-none city-badge"
+                    className="btn btn-sm btn-light mt-1 border border-none city-badge"
                     key={city.id}
                     value={city}
                   >

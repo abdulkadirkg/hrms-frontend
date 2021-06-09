@@ -3,12 +3,14 @@ import React from "react";
 export default function Footer() {
   return (
     <div>
-      <footer className="footer">
-        <div className="footer-top">
-          <a href="/#" className="logo">
-            #HRMS by AbdulkadirKG
-          </a>
-          <div className="footer-menu">
+      <div className="footer">
+        <div className="row footer-top">
+          <div className="col-lg-6">
+            <a href="/#" className="logo">
+              #HRMS by AbdulkadirKG
+            </a>
+          </div>
+          <div className="col-lg-2 footer-menu">
             <nav>
               <h5>Topluluk</h5>
               <ul>
@@ -26,6 +28,8 @@ export default function Footer() {
                 </li>
               </ul>
             </nav>
+          </div>
+          <div className="col-lg-2 footer-menu">
             <nav>
               <h5>Başlarken</h5>
               <ul>
@@ -49,6 +53,8 @@ export default function Footer() {
                 </li>
               </ul>
             </nav>
+          </div>
+          <div className="col-lg-2 footer-menu">
             <nav>
               <h5>Kaynaklar</h5>
               <ul>
@@ -70,32 +76,29 @@ export default function Footer() {
               </ul>
             </nav>
           </div>
-        </div>
-        <div className="footer-bottom">
-          <p>
-            &copy; 2021 <b>AbdulkadirKG</b>. All rights reserved.
-          </p>
-          <nav className="footer-menu">
-            <ul>
-              <li>
-                <a href="/#">Kullanım Koşulları</a>
-              </li>
-              <li>
-                <a href="/#">Gizlilik Politikası</a>
-              </li>
-              <li>
-                <a href="/#">Güvenlik</a>
-              </li>
-              <li>
-                <a href="/#">Sitemap</a>
-              </li>
-            </ul>
-          </nav>
-          <ul className="footer-social">
+          <div className="footer-bottom">
+            <p>
+              &copy; 2021 <b>AbdulkadirKG</b>. All rights reserved.
+            </p>
+            <nav className="footer-menu d-inline">
+              <ul>
+                <li>
+                  <a href="/#">Kullanım Koşulları</a>
+                </li>
+                <li>
+                  <a href="/#">Gizlilik Politikası</a>
+                </li>
+                <li>
+                  <a href="/#">Güvenlik</a>
+                </li>
+                <li>
+                  <a href="/#">Sitemap</a>
+                </li>
+              </ul>
+            </nav>
+            {/* <ul className="footer-social">
             <li>
-              <a href="/#">
-                <img src="img/twitter-logo.svg" alt="" />
-              </a>
+              <FontAwesomeIcon icon={}/>
             </li>
             <li>
               <a href="/#">
@@ -112,9 +115,10 @@ export default function Footer() {
                 <img src="img/dribbble-logo.svg" alt="" />
               </a>
             </li>
-          </ul>
+          </ul> */}
+          </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }

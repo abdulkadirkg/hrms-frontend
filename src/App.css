@@ -51,7 +51,6 @@ body {
 
 footer {
   background-color: var(--primaryColor);
-  display: block;
   color: #fff;
 }
 
@@ -86,10 +85,10 @@ footer {
   background-color: #fff;
   box-shadow: 0 10px 76px -12px rgba(0, 29, 147, 0.1);
 }
-.footer .footer-top {
+/* .footer .footer-top {
   display: flex;
   align-items: flex-start;
-}
+} */
 .footer .footer-top .logo {
   display: flex;
   align-items: center;
@@ -150,6 +149,8 @@ footer {
 }
 .footer .footer-bottom .footer-menu ul {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
 }
 .footer .footer-bottom .footer-menu ul li {
   margin: 0 25px;
