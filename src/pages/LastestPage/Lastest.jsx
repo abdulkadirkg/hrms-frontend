@@ -31,7 +31,9 @@ export default function Lastest() {
 
             <div className="advertisements">
               <ul className="component--job-items">
-                <Advertisement advertisements={advertisements} />
+                {advertisements.map((advertisement) => (
+                  <Advertisement key={advertisement.id} advertisement={advertisement} />
+                ))}
                 {/* {advertisements.map((advertisement) => (
                   <li className="shadow-sm" key={advertisement.id}>
                     <a href="/#">

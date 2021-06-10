@@ -29,21 +29,6 @@ body {
   font-size: 11px;
   margin-right: 4px;
 }
-/* 
-.advertisements .advertisement {
-  display: block;
-  background-color: #fff;
-  padding: 9px;
-  border-radius: 5px;
-  border-left: 3px solid var(--primaryColor);
-  margin: 0 0 15px 0;
-  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
-  cursor: pointer;
-}
-
-.advertisements .advertisement:hover {
-  background-color: #2e426015;
-} */
 
 .btn-secondary {
   background-color: rgb(197, 197, 197);
