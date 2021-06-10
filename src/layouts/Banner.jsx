@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptop, faMapMarkerAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLaptop,
+  faMapMarkerAlt,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from "react";
 import CityService from "../services/cityService";
 import PositionService from "../services/positionService";
@@ -18,8 +22,8 @@ export default function Banner() {
     let positionService = new PositionService();
     positionService.getPositions().then((result) => {
       setPositions(result.data.data);
-    });
-  });
+    }); 
+  }, []);
   return (
     <>
       <section className="banner-section">
@@ -28,7 +32,7 @@ export default function Banner() {
             <div className="col-xl-7">
               <input
                 type="text"
-                className="form-control form-control-lg"
+                className="form-control form-control-sm font-weight-light"
                 placeholder="Pozisyon Ara"
               />
               <div className="my-1 d-block">
@@ -45,7 +49,7 @@ export default function Banner() {
             </div>
             <div className="col-xl-4">
               <select
-                className="form-control-lg form-control mr-sm-2"
+                className="form-control-sm font-weight-light form-control mr-sm-2"
                 id="inlineFormCustomSelect"
               >
                 <option>Şehir Seçiniz</option>

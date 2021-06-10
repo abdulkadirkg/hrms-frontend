@@ -15,7 +15,6 @@ export default function Lastest() {
       .getAdvertisements()
       .then((result) => setAdvertisements(result.data.data));
   }, []);
-  console.log(advertisements);
   return (
     <div>
       <div className="container">
@@ -50,7 +49,9 @@ export default function Lastest() {
                         <span className="position">
                           {advertisement?.jobDescription}
                         </span>
-                        <small className="d-block text-secondary font-italic">1 Gün Önce</small>
+                        <small className="d-block text-dark font-italic">
+                          1 Gün Önce
+                        </small>
                       </span>
                       <span className="location">
                         <FontAwesomeIcon
