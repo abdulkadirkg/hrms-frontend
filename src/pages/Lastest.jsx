@@ -4,7 +4,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
-import Filters from "../layouts/Filters";
+import Filters from "../layouts/FiltersLayout/Filters";
 import AdvertisementService from "../services/advertisementService";
 
 export default function Lastest() {

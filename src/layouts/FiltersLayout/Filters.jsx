@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import './Filters.css';
 import React, { useState, useEffect } from "react";
-import CityService from "../services/cityService";
+import CityService from "../../services/cityService";
 
 export default function Filters() {
       const [cities, setCities] = useState([]);

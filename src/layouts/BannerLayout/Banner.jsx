@@ -1,12 +1,10 @@
+import "./Banner.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLaptop,
-  faMapMarkerAlt,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faLaptop, faMapMarkerAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from "react";
-import CityService from "../services/cityService";
-import PositionService from "../services/positionService";
+
+import PositionService from "../../services/positionService";
+import CityService from "../../services/cityService";
 
 export default function Banner() {
   const [cities, setCities] = useState([]);
@@ -22,7 +20,7 @@ export default function Banner() {
     let positionService = new PositionService();
     positionService.getPositions().then((result) => {
       setPositions(result.data.data);
-    }); 
+    });
   }, []);
   return (
     <>
