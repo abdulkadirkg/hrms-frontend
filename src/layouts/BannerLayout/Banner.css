@@ -1,0 +1,11 @@
+.create-account-banner {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: var(--primaryColor);
+  color: #fff;
+}
+
+.banner-section {
+  background-color: var(--primaryColor);
+  padding: 45px 5px;
+}

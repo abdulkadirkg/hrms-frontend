@@ -1,11 +1,10 @@
-import {
-  faArrowRight,
-  faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
-import Filters from "../layouts/FiltersLayout/Filters";
-import AdvertisementService from "../services/advertisementService";
+import "./Lastest.css";
+import Filters from "../../layouts/FiltersLayout/Filters";
+import AdvertisementService from "../../services/advertisementService";
+import Advertisement from "../../layouts/AdvertisementLayout/Advertisement";
 
 export default function Lastest() {
   const [advertisements, setAdvertisements] = useState([]);
@@ -32,7 +31,8 @@ export default function Lastest() {
 
             <div className="advertisements">
               <ul className="component--job-items">
-                {advertisements.map((advertisement) => (
+                <Advertisement advertisements={advertisements} />
+                {/* {advertisements.map((advertisement) => (
                   <li className="shadow-sm" key={advertisement.id}>
                     <a href="/#">
                       <span className="avatar">
@@ -64,7 +64,7 @@ export default function Lastest() {
                       </span>
                     </a>
                   </li>
-                ))}
+                ))} */}
               </ul>
               <div className="d-flex justify-content-center">
                 <a href="/#" className="shadow component--job-button">

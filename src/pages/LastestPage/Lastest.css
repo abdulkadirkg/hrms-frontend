@@ -1,0 +1,98 @@
+
+.component--job-item {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 610px;
+  padding: 50px 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.component--job-item .title {
+  margin-bottom: 5px;
+  color: #111127;
+  font-weight: bold;
+}
+.component--job-item .title a {
+  color: #111127;
+}
+.component--job-item .position {
+  color: rgba(17, 17, 39, 0.7);
+  margin-bottom: 24px;
+}
+.component--job-item p {
+  color: #111127;
+  line-height: 26px;
+  margin-bottom: 25px;
+}
+.component--job-item .tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.component--job-item .tags a {
+  padding: 7px 20px;
+  background: #e7eafb;
+  border-radius: 30px;
+  color: #111127;
+  margin: 0 10px 10px 0;
+}
+.component--job-item .tags a:hover {
+  background: #dadff9;
+}
+.component--job-items {
+  display: flex;
+  flex-direction: column;
+}
+.component--job-items li {
+  margin-bottom: 15px;
+  list-style: none;
+}
+.component--job-items li a {
+  display: flex;
+  background: #fff;
+  border-radius: 5px;
+  align-items: center;
+  padding: 20px 45px 20px 20px;
+  transition: 300ms transform;
+}
+.component--job-items li a:hover {
+  transform: scale(1.005);
+  text-decoration: none;
+}
+.component--job-items li a .avatar {
+  min-width: 64px;
+  margin-right: 15px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+  color: var(--color);
+  border: 2px solid #e7eafb;
+}
+@media (max-width: 767px) {                  
+   .component--job-items li a .avatar {
+      display: none;
+   }
+}
+.component--job-items li a .detail {
+  display: flex;
+  flex-direction: column;
+}
+.component--job-items li a .detail .title {
+  font-weight: bold;
+  color: #111127;
+  margin-bottom: 9px;
+}
+.component--job-items li a .detail .position {
+  font-size: 14px;
+  color: rgba(17, 17, 39, 0.7);
+}
+.component--job-items li a .location {
+  opacity: 0.6;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #111127;
+}
