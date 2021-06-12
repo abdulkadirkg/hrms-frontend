@@ -4,7 +4,7 @@ import React from "react";
 export default function CreateAccountBanner() {
   return (
     <div>
-      <div className="container">
+      <div className="container p-0">
         <div className="create-account-banner shadow">
           <div className="row">
             <div className="col-md-10">

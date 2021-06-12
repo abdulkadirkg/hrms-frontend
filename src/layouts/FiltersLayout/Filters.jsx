@@ -1,17 +1,30 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
-import './Filters.css';
+import {
+  faCheckCircle,
+  faFilter,
+  faLocationArrow,
+} from "@fortawesome/free-solid-svg-icons";
+import "./Filters.css";
 import React, { useState, useEffect } from "react";
 import CityService from "../../services/cityService";
+import JobTypeService from "../../services/jobTypeService";
 
 export default function Filters() {
-      const [cities, setCities] = useState([]);
-      useEffect(() => {
-        let cityService = new CityService();
-        cityService.getCities().then((result) => {
-          setCities(result.data.data);
-        });
-      }, []);
+  const [cities, setCities] = useState([]);
+  useEffect(() => {
+    let cityService = new CityService();
+    cityService.getCities().then((result) => {
+      setCities(result.data.data);
+    });
+  }, []);
+
+  const [jobTypes, setJobTypes] = useState([]);
+  useEffect(() => {
+    let jobTypeService = new JobTypeService();
+    jobTypeService.getJobTypes().then((result) => {
+      setJobTypes(result.data.data);
+    });
+  }, []);
   return (
     <div>
       <aside className="component--job-filter shadow-sm">
@@ -24,55 +37,22 @@ export default function Filters() {
             />
           </div>
           <hr className="mt-0" />
-          <h5 className="font-weight-bold">
+          <h5 className="font-weight-bold primary-color-text">
             <FontAwesomeIcon icon={faFilter} /> İş Türleri
           </h5>
           <ul className="checkbox-list">
-            <li>
-              <label>
-                <input type="checkbox" />
-                <span className="checkbox"></span>
-                <span className="text">Tümü</span>
-              </label>
-            </li>
-            <li>
-              <label>
-                <input type="checkbox" />
-                <span className="checkbox"></span>
-                <span className="text">Tam Zamanlı</span>
-              </label>
-            </li>
-            <li>
-              <label>
-                <input type="checkbox" />
-                <span className="checkbox"></span>
-                <span className="text">Yarı Zamanlı</span>
-              </label>
-            </li>
-            <li>
-              <label>
-                <input type="checkbox" />
-                <span className="checkbox"></span>
-                <span className="text">Freelance</span>
-              </label>
-            </li>
-            <li>
-              <label>
-                <input type="checkbox" />
-                <span className="checkbox"></span>
-                <span className="text">Stajyer</span>
-              </label>
-            </li>
-            <li>
-              <label>
-                <input type="checkbox" />
-                <span className="checkbox"></span>
-                <span className="text">Remote</span>
-              </label>
-            </li>
+            {jobTypes.map((jobType) => (
+              <li key={jobType.id} value={jobType}>
+                <label>
+                  <input type="checkbox" />
+                  <span className="checkbox"></span>
+                  <span className="text">{jobType.jobType}</span>
+                </label>
+              </li>
+            ))}
           </ul>
           <hr />
-          <h5 className="font-weight-bold">
+          <h5 className="font-weight-bold primary-color-text">
             <FontAwesomeIcon icon={faLocationArrow} /> Konum
           </h5>
           <ul className="filter-form">
@@ -93,7 +73,9 @@ export default function Filters() {
               </select>
             </li>
             <li>
-              <button type="submit">Uygula</button>
+              <button type="submit">
+                <FontAwesomeIcon icon={faCheckCircle} /> Uygula
+              </button>
             </li>
           </ul>
         </form>

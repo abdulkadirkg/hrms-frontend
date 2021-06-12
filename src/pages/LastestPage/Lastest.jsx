@@ -5,6 +5,7 @@ import "./Lastest.css";
 import Filters from "../../layouts/FiltersLayout/Filters";
 import AdvertisementService from "../../services/advertisementService";
 import Advertisement from "../../layouts/AdvertisementLayout/Advertisement";
+import CreateAccountBanner from "../../layouts/CreateAccountBannerLayout/CreateAccountBanner";
 
 export default function Lastest() {
   const [advertisements, setAdvertisements] = useState([]);
@@ -20,53 +21,23 @@ export default function Lastest() {
         <div className="row my-5">
           <div className="col-lg-3 d-none d-lg-block">
             <strong>
-              <h4 className="font-weight-bold ">Filtreler</h4>
+              <h4 className="font-weight-bold primary-color-text">Filtreler</h4>
             </strong>
             <Filters />
           </div>
           <div className="col-lg-9">
             <strong>
-              <h4 className="font-weight-bold">İlanlar</h4>
+              <h4 className="font-weight-bold primary-color-text">İlanlar</h4>
             </strong>
 
             <div className="advertisements">
               <ul className="component--job-items">
                 {advertisements.map((advertisement) => (
-                  <Advertisement key={advertisement.id} advertisement={advertisement} />
+                  <Advertisement
+                    key={advertisement.id}
+                    advertisement={advertisement}
+                  />
                 ))}
-                {/* {advertisements.map((advertisement) => (
-                  <li className="shadow-sm" key={advertisement.id}>
-                    <a href="/#">
-                      <span className="avatar">
-                        {advertisement.position?.jobName[0]}
-                      </span>
-                      <span className="detail">
-                        <small className="text-muted">
-                          <b>{advertisement?.employer?.companyName}</b> -{" "}
-                          {advertisement?.employer?.webSite}
-                        </small>
-                        <span className="title">
-                          {advertisement.position?.jobName}
-                        </span>
-                        <span className="position">
-                          {advertisement?.jobDescription}
-                        </span>
-                        <small className="d-block text-dark font-italic">
-                          1 Gün Önce
-                        </small>
-                      </span>
-                      <span className="location">
-                        <FontAwesomeIcon
-                          className="mr-1"
-                          icon={faMapMarkerAlt}
-                        />{" "}
-                        <span className="d-block">
-                          {advertisement.city?.cityName}
-                        </span>
-                      </span>
-                    </a>
-                  </li>
-                ))} */}
               </ul>
               <div className="d-flex justify-content-center">
                 <a href="/#" className="shadow component--job-button">
@@ -77,6 +48,7 @@ export default function Lastest() {
             </div>
           </div>
         </div>
+        <CreateAccountBanner />
       </div>
     </div>
   );

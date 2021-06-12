@@ -55,8 +55,11 @@
   transition: 300ms transform;
 }
 .component--job-items li a:hover {
-  transform: scale(1.005);
+  transform: scale(1.007);
   text-decoration: none;
+  background-color: rgba(21, 51, 107, 0.301);
+  transition: .2s;
+
 }
 .component--job-items li a .avatar {
   min-width: 64px;
@@ -67,8 +70,8 @@
   font-weight: bold;
   display: grid;
   place-items: center;
-  color: var(--color);
-  border: 2px solid #e7eafb;
+  color: var(--primaryColor);
+  border: 5px solid #e7eafb;
 }
 @media (max-width: 767px) {                  
    .component--job-items li a .avatar {

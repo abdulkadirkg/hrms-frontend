@@ -1,10 +1,15 @@
 import "./Banner.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptop, faMapMarkerAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLaptop,
+  faMapMarkerAlt,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from "react";
 
 import PositionService from "../../services/positionService";
 import CityService from "../../services/cityService";
+import JobTypeService from "../../services/jobTypeService";
 
 export default function Banner() {
   const [cities, setCities] = useState([]);
@@ -22,12 +27,20 @@ export default function Banner() {
       setPositions(result.data.data);
     });
   }, []);
+
+  const [jobTypes, setJobTypes] = useState([]);
+  useEffect(() => {
+    let jobTypeService = new JobTypeService();
+    jobTypeService.getJobTypes().then((result) => {
+      setJobTypes(result.data.data);
+    });
+  }, []);
   return (
     <>
       <section className="banner-section">
         <div className="container border-main shadow-lg text-dark">
           <div className="form-row">
-            <div className="col-xl-7">
+            <div className="col-xl-5">
               <input
                 type="text"
                 className="form-control form-control-sm font-weight-light"
@@ -45,7 +58,31 @@ export default function Banner() {
                 ))}
               </div>
             </div>
-            <div className="col-xl-4">
+            <div className="col-xl-3">
+              <select
+                className="form-control-sm font-weight-light form-control mr-sm-2"
+                id="inlineFormCustomSelect"
+              >
+                <option>İş Tipi Seçiniz</option>
+                {jobTypes.map((jobType) => (
+                  <option key={jobType.id} value={jobType}>
+                    {jobType.jobType}
+                  </option>
+                ))}
+              </select>
+              <div className="my-1">
+                {jobTypes.map((jobType) => (
+                  <small
+                    className="btn btn-sm btn-light mt-1 border border-none city-badge"
+                    key={jobType.id}
+                    value={jobType}
+                  >
+                    <FontAwesomeIcon icon={faMapMarkerAlt} /> {jobType.jobType}
+                  </small>
+                ))}
+              </div>
+            </div>
+            <div className="col-xl-3">
               <select
                 className="form-control-sm font-weight-light form-control mr-sm-2"
                 id="inlineFormCustomSelect"
@@ -58,9 +95,6 @@ export default function Banner() {
                 ))}
               </select>
               <div className="my-1">
-                <small className="btn btn-sm btn-light border border-none city-badge">
-                  <FontAwesomeIcon icon={faMapMarkerAlt} /> Remote
-                </small>
                 {cities.map((city) => (
                   <small
                     className="btn btn-sm btn-light mt-1 border border-none city-badge"
@@ -73,7 +107,7 @@ export default function Banner() {
               </div>
             </div>
             <div className="col-xl-1 h-100">
-              <button className="btn btn-lg w-100 h-100 btn-main text-light">
+              <button className="btn btn-block btn-light font-weight-bold my-auto btn-sm border btn-main shadow">
                 <FontAwesomeIcon icon={faSearch} />
               </button>
             </div>

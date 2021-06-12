@@ -1,13 +1,14 @@
 import './Advertisement.css';
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import React from "react";
 
 export default function Advertisement({ advertisement }) {
   return (
     <div>
       <li className="shadow-sm" key={advertisement.id}>
-        <a href="/#">
+        <Link to={`/advertisement/${advertisement.id}`}>
           <span className="avatar">{advertisement.position?.jobName[0]}</span>
           <span className="detail">
             <small className="text-muted">
@@ -22,7 +23,7 @@ export default function Advertisement({ advertisement }) {
             <FontAwesomeIcon className="mr-1" icon={faMapMarkerAlt} />{" "}
             <span className="d-block">{advertisement.city?.cityName}</span>
           </span>
-        </a>
+        </Link>
       </li>
     </div>
   );

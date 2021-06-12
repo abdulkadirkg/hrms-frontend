@@ -5,6 +5,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   list-style: none !important;
+  transition: .1s!important;
 }
 *:focus {
   outline: none;
@@ -22,8 +23,25 @@ body {
   font-family: var(--mainFont);
   background: var(--mainBgColor);
   height: 100vh;
+  text-shadow: 0 0 1px black;
 }
 
+.primary-color-text{
+  color: var(--primaryColor)!important;
+}
+
+a{
+  text-decoration: none!important;
+  color: rgb(85, 85, 0);
+}
+
+.bg-main{
+  background-color: var(--mainBgColor);
+}
+
+.btn:hover{
+  transform: scale(1.05)!important;
+}
 
 .city-badge {
   font-size: 11px;

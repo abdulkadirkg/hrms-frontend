@@ -97,14 +97,15 @@
   color: #fff;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
+
   box-shadow: 0 11px 30px -15px #6778e1;
   transition: 300ms background-color;
   outline: none;
   border: none;
 }
 .component--job-filter form .filter-form li button:hover {
-  background: #5771ff;
+  font-weight: bold;
+  transform: scale(1.07);
 }
 
 .component--job-button {
@@ -123,6 +124,7 @@
 
 .component--job-button:hover {
   transform: scale(1.03);
+  font-weight: bold;
   color: #fff;
   font-weight: bold;
 }

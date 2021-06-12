@@ -1,0 +1,61 @@
+:root{
+    --border-color: #d8d8d8;
+}
+
+.explain-bar {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  height: 66px;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(206, 206, 206);
+  box-sizing: border-box;
+}
+.explain-title {
+  color: rgb(155, 155, 155);
+  font-size: 12px;
+  line-height: 40px;
+  white-space: nowrap;
+}
+.explain-subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -2px;
+  white-space: nowrap;
+}
+.explain-contents {
+  height: 66px;
+}
+.explain-contents + .explain-contents {
+  border-left: 1px solid var(--border-color);
+  padding-left: 16px;
+}
+
+@media screen and (max-width: 990px) {
+  .explain-contents, .explain-bar {
+    height: auto;
+    padding: 0;
+  }
+
+  .explain-bar {
+    flex-wrap: wrap;
+    padding-bottom: 14px;
+  }
+
+  .explain-contents {
+    width: 50%;
+    text-align: center;
+  }
+
+  .explain-contents + .explain-contents {
+    padding: 0;
+    border: 0;
+  }
+
+  .explain-contents:nth-child(2) ~ .explain-contents {
+    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+  }
+}
