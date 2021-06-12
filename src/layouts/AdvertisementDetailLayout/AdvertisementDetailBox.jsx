@@ -10,9 +10,9 @@ import "./AdvertisementDetailBox.css";
 export default function AdvertisementDetailBox({ advertisement }) {
   return (
     <div>
-      <div className="container my-4 shadow-sm border-main p-3">
+      <div className="container my-4 shadow-sm bg-white shadow rounded p-3">
         <div className="row">
-          <div className="col-10 my-auto d-flex flex-column">
+          <div className="col-9 my-auto d-flex flex-column">
             <strong className="h3 font-weight-bold mb-0 primary-color-text">
               {advertisement.employer.companyName}
             </strong>
@@ -29,7 +29,7 @@ export default function AdvertisementDetailBox({ advertisement }) {
               <FontAwesomeIcon icon={faPhone} /> {advertisement.employer.phone}
             </small>
           </div>
-          <div className="col-2 my-auto text-center font-weight-light">
+          <div className="col-3 my-auto text-center font-weight-light">
             <span>
               <FontAwesomeIcon icon={faMapMarkerAlt} />{" "}
               {advertisement.city.cityName}
