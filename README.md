@@ -1,4 +1,4 @@
-CANLI SUNUCUDA TEST ETMEK İÇİN <a href="https://adoring-noether-2298ba.netlify.app/">TIKLAYABİLİRSİNİZ</a>
+CANLI SUNUCUDA TEST ETMEK İÇİN <a href="https://human-resources-management-system.netlify.app/">TIKLAYABİLİRSİNİZ</a>
 
 # Getting Started with Create React App
 
