@@ -6,6 +6,7 @@ import Filters from "../../layouts/FiltersLayout/Filters";
 import AdvertisementService from "../../services/advertisementService";
 import Advertisement from "../../layouts/AdvertisementLayout/Advertisement";
 import CreateAccountBanner from "../../layouts/CreateAccountBannerLayout/CreateAccountBanner";
+import Banner from "../../layouts/BannerLayout/Banner";
 
 export default function Lastest() {
   const [advertisements, setAdvertisements] = useState([]);
@@ -17,6 +18,7 @@ export default function Lastest() {
   }, []);
   return (
     <div>
+      <Banner />
       <div className="container">
         <div className="row my-5">
           <div className="col-lg-3 d-none d-lg-block">

@@ -41,26 +41,26 @@ export default function AdvertisementDetailBox({ advertisement }) {
           <h3 className="m-0 font-weight-bold primary-color-text">{advertisement.position.jobName}</h3>
           <small className="m-0">Diğer <span className="primary-color-text">{advertisement.position.jobName}</span> ilanlarını görmek için tıklayabilirsiniz.</small>
         </strong>
-        <div class="explain-bar">
-          <div class="explain-contents">
-            <div class="explain-title">Pozisyon Sayısı</div>
-            <div class="explain-subtitle">
+        <div className="explain-bar">
+          <div className="explain-contents">
+            <div className="explain-title">Pozisyon Sayısı</div>
+            <div className="explain-subtitle">
               {advertisement.positionCount} Kişi
             </div>
           </div>
-          <div class="explain-contents">
-            <div class="explain-title">İş Tipi</div>
-            <div class="explain-subtitle">{advertisement.jobType?.jobType}</div>
+          <div className="explain-contents">
+            <div className="explain-title">İş Tipi</div>
+            <div className="explain-subtitle">{advertisement.jobType?.jobType}</div>
           </div>
-          <div class="explain-contents">
-            <div class="explain-title">Minimum Ücret</div>
-            <div class="explain-subtitle">
+          <div className="explain-contents">
+            <div className="explain-title">Minimum Ücret</div>
+            <div className="explain-subtitle">
               {advertisement.salaryMin} ₺ / Aylık
             </div>
           </div>
-          <div class="explain-contents">
-            <div class="explain-title">Maksimum Ücret</div>
-            <div class="explain-subtitle">
+          <div className="explain-contents">
+            <div className="explain-title">Maksimum Ücret</div>
+            <div className="explain-subtitle">
               {advertisement.salaryMax} ₺ / Aylık
             </div>
           </div>

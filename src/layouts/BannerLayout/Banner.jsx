@@ -108,7 +108,7 @@ export default function Banner() {
             </div>
             <div className="col-xl-1 h-100">
               <button className="btn btn-block btn-light font-weight-bold my-auto btn-sm border btn-main shadow">
-                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon={faSearch} /> Ara
               </button>
             </div>
           </div>

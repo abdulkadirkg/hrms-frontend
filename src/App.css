@@ -40,7 +40,7 @@ a{
 }
 
 .btn:hover{
-  transform: scale(1.05)!important;
+  transform: scale(1.009)!important;
 }
 
 .city-badge {
