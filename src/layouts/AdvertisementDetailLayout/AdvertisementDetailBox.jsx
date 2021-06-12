@@ -9,8 +9,8 @@ import React from "react";
 import "./AdvertisementDetailBox.css";
 export default function AdvertisementDetailBox({ advertisement }) {
   return (
-    <div>
-      <div className="container my-4 shadow-sm bg-white shadow rounded p-3">
+    <div className="container">
+      <div className="my-4 shadow-sm bg-white shadow rounded p-3">
         <div className="row">
           <div className="col-9 my-auto d-flex flex-column">
             <strong className="h3 font-weight-bold mb-0 primary-color-text">
@@ -25,7 +25,7 @@ export default function AdvertisementDetailBox({ advertisement }) {
                 {advertisement.employer.webSite}
               </a>
             </small>
-            <small className="text-secondary">
+            <small className="text-danger">
               <FontAwesomeIcon icon={faPhone} /> {advertisement.employer.phone}
             </small>
           </div>
