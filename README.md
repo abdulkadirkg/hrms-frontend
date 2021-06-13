@@ -1,4 +1,39 @@
-CANLI SUNUCUDA TEST ETMEK İÇİN <a href="https://human-resources-management-system.netlify.app/">TIKLAYABİLİRSİNİZ</a>
+# HRMS
+<p align="center">
+  <img width="200" src="https://user-images.githubusercontent.com/51646136/120723372-44bbb900-c4da-11eb-8c94-a32c0dc68961.png"/>
+  <h1 align="center">Human Resources Management System</h1>
+  <p float="left" align="center">
+    <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white"/>
+    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+  </p>
+</p>
+
+<b><h1>BACKEND için <a href="https://github.com/abdulkadirkg/HRMS">Tıklayabilirsiniz.</a></h1></b>
+
+<b><h1>Canlı Sunucuda Test Etmek İçin - BACKEND <a href="https://human-resources-management-sys.herokuapp.com/swagger-ui.html#/">Tıklayabilirsiniz.</a></h1></b>
+
+<b><h1>Canlı Sunucuda Test Etmek İçin - FRONTEND <a href="https://human-resources-management-system.netlify.app/">Tıklayabilirsiniz.</a></h1></b>
+<b><h2>İsterler</h2></b>
+<ul>
+     <li>
+  
+    Req 17 : Formik kullanarak formlarınızın tasarımını oluşturunuz. 
+    Backend'e bağlayınız (Araştırma ve uygulama) https://formik.org/
+
+    ✅ Tamamlandı
+  </li>
+</ul>
+<p align="center">
+  <a href="https://instagram.com/abdulkadirkg" target="_blank">
+    <img align="center" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+  </a>
+</p>
+<p align="center">Made With ♥</p>
+ <hr/>
 
 # Getting Started with Create React App
 
