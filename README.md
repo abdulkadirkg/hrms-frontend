@@ -11,6 +11,9 @@
     <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/>
   </p>
 </p>
+
+<b><h1>BACKEND için <a href="https://github.com/abdulkadirkg/HRMS">Tıklayabilirsiniz.</a></h1></b>
+
 <b><h1>Canlı Sunucuda Test Etmek İçin - BACKEND <a href="https://human-resources-management-sys.herokuapp.com/swagger-ui.html#/">Tıklayabilirsiniz.</a></h1></b>
 
 <b><h1>Canlı Sunucuda Test Etmek İçin - FRONTEND <a href="https://human-resources-management-system.netlify.app/">Tıklayabilirsiniz.</a></h1></b>
