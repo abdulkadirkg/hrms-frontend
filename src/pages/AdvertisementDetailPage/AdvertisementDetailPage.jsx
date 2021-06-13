@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./AdvertisementDetail.css";
+import "./AdvertisementDetailPage.css";
 import AdvertisementDetailBox from "../../layouts/AdvertisementDetailLayout/AdvertisementDetailBox";
 import AdvertisementService from "../../services/advertisementService";
 import Preloader from "../../utils/PreloaderUtil/Preloader";
 
-export default function AdvertisementDetail() {
+export default function AdvertisementDetailPage() {
   let { id } = useParams();
   const [advertisement, setAdvertisement] = useState({});
   useEffect(() => {

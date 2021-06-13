@@ -10,6 +10,9 @@ export default function Footer() {
             <a href="/#" className="logo">
               #HRMS by AbdulkadirKG
             </a>
+            <span className="font-weight-light">
+              - Powered By <b className="font-weight-bold">Engin DEMİROĞ</b>
+            </span>
           </div>
           <div className="col-lg-2 footer-menu">
             <nav>

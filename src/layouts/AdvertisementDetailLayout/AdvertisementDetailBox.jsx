@@ -76,8 +76,7 @@ export default function AdvertisementDetailBox({ advertisement }) {
             </button>
             <div className="please-login d-block text-center bg-main rounded border p-3">
               <span className="d-block text-muted ">
-                Başvurmak İçin Lütfen Giriş Yapın. Üye Değilseniz Kolayca Üye
-                Olabilirsiniz.
+                Başvurmak İçin Lütfen Giriş Yapın. Üye Değilseniz Kariyerinizde Yeni Bir Sayfa Açmak İçin Üye Olun.
               </span>
               <span className="d-block primary-color-text">
                 <a href="#/" className="font-weight-bold">
@@ -85,7 +84,7 @@ export default function AdvertisementDetailBox({ advertisement }) {
                 </a>{" "}
                 |{" "}
                 <a href="#/" className="font-weight-bold">
-                  Kayıt Ol
+                  Üye Ol
                 </a>
               </span>
             </div>

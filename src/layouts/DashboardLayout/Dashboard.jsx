@@ -1,16 +1,17 @@
 import React from "react";
 import { Route } from "react-router";
-import AdvertisementDetail from "../../pages/AdvertisementDetailPage/AdvertisementDetail";
-import Lastest from "../../pages/LastestPage/Lastest";
+import AdvertisementDetailPage from "../../pages/AdvertisementDetailPage/AdvertisementDetailPage";
+import HomePage from "../../pages/HomePage/HomePage"
+import RegisterEmployerPage from "../../pages/RegisterEmployerPage/RegisterEmployerPage";
 export default function Dashboard() {
   return (
     <div>
       
-      <Route exact path="/" component={Lastest} />
-      <Route exact path="/advertisements" component={Lastest} />
-      <Route path="/advertisement/:id" component={AdvertisementDetail} />
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/advertisements" component={HomePage} />
+      <Route exact path="/advertisement/:id" component={AdvertisementDetailPage} />
+      <Route exact path="/register-employer" component={RegisterEmployerPage}/>
       {/* <Route path="/cart" component={CartDetail} /> */}
-      {/* <Lastest /> */}
       
     </div>
   );

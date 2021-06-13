@@ -1,14 +1,14 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
-import "./Lastest.css";
+import "./HomePage.css";
 import Filters from "../../layouts/FiltersLayout/Filters";
 import AdvertisementService from "../../services/advertisementService";
 import Advertisement from "../../layouts/AdvertisementLayout/Advertisement";
 import CreateAccountBanner from "../../layouts/CreateAccountBannerLayout/CreateAccountBanner";
 import Banner from "../../layouts/BannerLayout/Banner";
 
-export default function Lastest() {
+export default function Home() {
   const [advertisements, setAdvertisements] = useState([]);
   useEffect(() => {
     let advertisementService = new AdvertisementService();

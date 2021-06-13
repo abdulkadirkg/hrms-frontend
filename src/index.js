@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastProvider, useToasts } from "react-toast-notifications";
 
 ReactDOM.render(
-  <BrowserRouter><App /></BrowserRouter> ,
+  <BrowserRouter><ToastProvider><App /></ToastProvider></BrowserRouter> ,
   document.getElementById('root')
 );
 
