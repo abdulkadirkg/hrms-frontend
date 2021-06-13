@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { ToastProvider, useToasts } from "react-toast-notifications";
+import { ToastProvider } from "react-toast-notifications";
+import ScrollToTop from "./utils/ScrollToTop/ScrollToTopUtil"
 
 ReactDOM.render(
-  <BrowserRouter><ToastProvider><App /></ToastProvider></BrowserRouter> ,
+  <BrowserRouter><ToastProvider><ScrollToTop /><App /></ToastProvider></BrowserRouter> ,
   document.getElementById('root')
 );
 
