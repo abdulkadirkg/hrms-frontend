@@ -19,7 +19,7 @@ export default function AdvertisementDetailBox({ advertisement }) {
                 <FontAwesomeIcon icon={faLink} /> {advertisement.employer.webSite}
               </a>
             </small>
-            <small className="text-danger">
+            <small className="primary-color-text">
               <FontAwesomeIcon icon={faPhone} /> {advertisement.employer.phone}
             </small>
           </div>

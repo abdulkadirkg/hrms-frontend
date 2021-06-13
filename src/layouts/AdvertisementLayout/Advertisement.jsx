@@ -24,7 +24,7 @@ export default function Advertisement({ advertisement }) {
           </span> */}
         </Link>
         <div className="card-footer py-1 bg-light">
-          <div className="d-flex text-secondary flex-wrap justify-content-around">
+          <div className="d-flex primary-color-text flex-wrap justify-content-around">
             <small>{advertisement?.positionCount} Kişi</small>
             <small>
               {advertisement.salaryMin} ₺ | {advertisement.salaryMax} ₺
