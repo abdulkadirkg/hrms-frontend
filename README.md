@@ -17,6 +17,8 @@
 <b><h1>Canlı Sunucuda Test Etmek İçin - BACKEND <a href="https://human-resources-management-sys.herokuapp.com/swagger-ui.html#/">Tıklayabilirsiniz.</a></h1></b>
 
 <b><h1>Canlı Sunucuda Test Etmek İçin - FRONTEND <a href="https://human-resources-management-system.netlify.app/">Tıklayabilirsiniz.</a></h1></b>
+
+<b>HAZIR TEMPLATE DEĞİLDİR</b>
 <b><h2>İsterler</h2></b>
 <ul>
      <li>
