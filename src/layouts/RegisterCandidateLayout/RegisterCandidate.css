@@ -1,0 +1,21 @@
+
+.register-candidate-form label{
+	color:#000000;
+    font-weight: 600;
+}
+
+.register-candidate-form input{
+	width: 100%;
+	font-size: 16px;
+	font-weight: 300;
+	color: #2b3548;
+	height: 40px;
+	border: none;
+	border-bottom: 1px solid #e2e9f1;
+	margin-bottom: 10px;
+}
+
+.register-candidate-form input:focus{
+	outline: none;
+	border-bottom : 2px solid rgba(43,53,72,.6);
+}

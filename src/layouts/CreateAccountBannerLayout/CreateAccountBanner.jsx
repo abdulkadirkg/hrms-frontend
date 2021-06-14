@@ -21,7 +21,9 @@ export default function CreateAccountBanner() {
               </blockquote>
             </div>
             <div className="col-md-2 my-auto">
-              <div className="btn btn-light shadow font-weight-bold btn-lg w-100">Üye Ol</div>
+              <Link to="/register-candidate">
+                <div className="btn btn-light shadow font-weight-bold btn-lg w-100">Üye Ol</div>
+              </Link>
             </div>
           </div>
         </div>

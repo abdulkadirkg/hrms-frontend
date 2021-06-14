@@ -36,7 +36,7 @@ export default function Banner() {
     });
   }, []);
   return (
-    <>
+    <div>
       <section className="banner-section">
         <div className="container border-main shadow-lg text-dark">
           <div className="form-row">
@@ -114,6 +114,6 @@ export default function Banner() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
