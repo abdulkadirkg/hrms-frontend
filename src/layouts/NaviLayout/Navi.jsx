@@ -6,6 +6,12 @@ import { Link } from "react-router-dom";
 export default function Navi() {
   return (
     <div>
+      <div className="engin-demirog alert my-auto border-0 rounded-0 p-1 text-center alert-dismissible small fade show alert-dark bg-primary text-light" role="alert">
+        <b>Engin Hocam</b> Mentörlük İstiyoruz!!! 🙏🙃
+        <button type="button " class="p-0 mr-2 close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <header className="shadow-lg">
         <div className="d-flex py-4 justify-content-between logo container">
           <span className="h4 my-auto w-75 text-wrap">

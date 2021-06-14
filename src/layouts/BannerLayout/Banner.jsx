@@ -15,7 +15,7 @@ export default function Banner() {
   const [cities, setCities] = useState([]);
   useEffect(() => {
     let cityService = new CityService();
-    cityService.getCities().then((result) => {
+    cityService.getCitiesByCount(3).then((result) => {
       setCities(result.data.data);
     });
   }, []);
@@ -23,7 +23,7 @@ export default function Banner() {
   const [positions, setPositions] = useState([]);
   useEffect(() => {
     let positionService = new PositionService();
-    positionService.getPositions().then((result) => {
+    positionService.getPositionsByCount(3).then((result) => {
       setPositions(result.data.data);
     });
   }, []);
@@ -31,7 +31,7 @@ export default function Banner() {
   const [jobTypes, setJobTypes] = useState([]);
   useEffect(() => {
     let jobTypeService = new JobTypeService();
-    jobTypeService.getJobTypes().then((result) => {
+    jobTypeService.getJobTypesByCount(2).then((result) => {
       setJobTypes(result.data.data);
     });
   }, []);

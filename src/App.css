@@ -39,6 +39,10 @@ a{
   background-color: var(--mainBgColor);
 }
 
+.bg-primary{
+  background-color: var(--primaryColor)!important;
+}
+
 .btn:hover{
   transform: scale(1.009)!important;
 }
