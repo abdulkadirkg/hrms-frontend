@@ -14,4 +14,8 @@ export default class AdvertisementService {
     getAdvertisment(id) {
         return axios.get(baseUrl + "jobadvertisements/get?Id=" + id);
     }
+    saveAdvertisement(advertisement){
+        let result = axios.post(baseUrl + "jobadvertisements/add", advertisement);
+        return result;
+    }
 }

@@ -19,12 +19,8 @@ export default function Advertisement({ advertisement }) {
               </svg>
             </small>
             <span className="title">{advertisement.position?.jobName}</span>
-            <span className="position">{advertisement?.jobDescription}</span>
-            {/* <small className="d-block text-dark font-italic">1 Gün Önce</small> */}
+            <span className="position text-muted">{advertisement?.jobDescription}</span>
           </span>
-          {/* <span className="location">
-            <FontAwesomeIcon className="mr-1" icon={faMapMarkerAlt} /> <span className="d-block">{advertisement.city?.cityName}</span>
-          </span> */}
         </Link>
         <div className="card-footer py-1 bg-light">
           <div className="d-flex primary-color-text flex-wrap justify-content-around">

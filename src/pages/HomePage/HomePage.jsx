@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     let advertisementService = new AdvertisementService();
     advertisementService
-      .getAdvertisementsByPage(1,10)
+      .getAdvertisementsByPage(1,6)
       // .getAdvertisementsConfirmedByStaff()
 
       .then((result) => setAdvertisements(result.data.data));

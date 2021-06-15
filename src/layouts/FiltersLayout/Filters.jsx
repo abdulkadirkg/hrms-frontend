@@ -1,13 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheckCircle,
-  faFilter,
-  faLocationArrow,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle, faFilter, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import "./Filters.css";
 import React, { useState, useEffect } from "react";
 import CityService from "../../services/cityService";
 import JobTypeService from "../../services/jobTypeService";
+import PositionService from "../../services/positionService";
 
 export default function Filters() {
   const [cities, setCities] = useState([]);
@@ -25,16 +22,20 @@ export default function Filters() {
       setJobTypes(result.data.data);
     });
   }, []);
+
+  const [positions, setPositions] = useState([]);
+  useEffect(() => {
+    let positionService = new PositionService();
+    positionService.getPositions().then((result) => {
+      setPositions(result.data.data);
+    });
+  }, []);
   return (
     <div>
       <aside className="component--job-filter shadow-sm">
         <form action="">
           <div className="search mb-3">
-            <input
-              type="text"
-              className="form-control shadow-sm"
-              placeholder="Kelime İle Ara"
-            />
+            <input type="text" className="form-control shadow-sm" placeholder="Kelime İle Ara" />
           </div>
           <hr className="mt-0" />
           <h5 className="font-weight-bold primary-color-text">
@@ -50,6 +51,18 @@ export default function Filters() {
                 </label>
               </li>
             ))}
+          </ul>
+          <ul className="filter-form">
+            <li>
+              <label htmlFor="city">Pozisyon</label>
+              <select name="" id="city">
+                {positions.map((position) => (
+                  <option key={position.id} value={position}>
+                    {position.jobName}
+                  </option>
+                ))}
+              </select>
+            </li>
           </ul>
           <hr />
           <h5 className="font-weight-bold primary-color-text">

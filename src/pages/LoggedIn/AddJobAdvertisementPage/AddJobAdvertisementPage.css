@@ -1,0 +1,13 @@
+.add-job-advertisement-form select, .add-job-advertisement-form input{
+    height: 46px;
+}
+
+textarea {
+  appearance: none;
+  border: 2px solid #e7eafb;
+  border-radius: 8px;
+  width: 100%;
+  padding:10px;
+  text-overflow: ellipsis;
+  transition: 300ms border-color;
+}
