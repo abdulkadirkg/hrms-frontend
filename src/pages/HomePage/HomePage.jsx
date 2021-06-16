@@ -7,6 +7,8 @@ import AdvertisementService from "../../services/advertisementService";
 import Advertisement from "../../layouts/AdvertisementLayout/Advertisement";
 import CreateAccountBanner from "../../layouts/CreateAccountBannerLayout/CreateAccountBanner";
 import Banner from "../../layouts/BannerLayout/Banner";
+import { Link } from "react-router-dom";
+
 
 export default function Home() {
   const [advertisements, setAdvertisements] = useState([]);
@@ -44,10 +46,10 @@ export default function Home() {
                 ))}
               </ul>
               <div className="d-flex justify-content-center">
-                <a href="/#" className="shadow component--job-button">
+                <Link to="/advertisements" className="shadow component--job-button">
                   <span className="mr-3">Tüm İlanları Gör</span>{" "}
                   <FontAwesomeIcon icon={faArrowRight} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
