@@ -6,9 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastProvider } from "react-toast-notifications";
 import ScrollToTop from "./utils/ScrollToTop/ScrollToTopUtil"
-
+import { Provider } from 'react-redux';
+import { configureStore } from "./store/configureStore"
+const store = configureStore();
 ReactDOM.render(
-  <BrowserRouter><ToastProvider><ScrollToTop /><App /></ToastProvider></BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <ToastProvider>
+        <ScrollToTop />
+        <App />
+      </ToastProvider>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

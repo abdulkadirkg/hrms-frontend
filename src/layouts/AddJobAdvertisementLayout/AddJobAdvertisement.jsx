@@ -8,7 +8,6 @@ import CityService from "../../services/cityService";
 import PositionService from "../../services/positionService";
 import JobTypeService from "../../services/jobTypeService";
 import AdvertisementService from "../../services/advertisementService";
-import { Select } from "semantic-ui-react";
 export default function AddJobAdvertisement() {
   const [cities, setCities] = useState([]);
   useEffect(() => {
