@@ -54,8 +54,8 @@ export default function Filters() {
           </ul>
           <ul className="filter-form">
             <li>
-              <label htmlFor="city">Pozisyon</label>
-              <select name="" id="city">
+              <label htmlFor="position">Pozisyon</label>
+              <select name="position" id="position">
                 {positions.map((position) => (
                   <option key={position.id} value={position}>
                     {position.jobName}
@@ -71,13 +71,13 @@ export default function Filters() {
           <ul className="filter-form">
             <li>
               <label htmlFor="country">Ülke/Şehir</label>
-              <select name="" id="country">
+              <select name="country" id="country">
                 <option value="">Türkiye</option>
               </select>
             </li>
             <li>
               <label htmlFor="city">Şehir</label>
-              <select name="" id="city">
+              <select name="city" id="city">
                 {cities.map((city) => (
                   <option key={city.id} value={city}>
                     {city.cityName}

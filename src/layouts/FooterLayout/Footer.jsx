@@ -6,8 +6,8 @@ export default function Footer() {
     <div>
       <div className="footer">
         <div className="row footer-top">
-          <div className="col-lg-6">
-            <a href="/#" className="logo">
+          <div className="col-lg-6"> 
+            <a href="https://instagram.com/abdulkadirkg" target="_blank" className="logo">
               #HRMS by AbdulkadirKG
             </a>
             <span className="font-weight-light">
@@ -82,7 +82,7 @@ export default function Footer() {
           </div>
           <div className="footer-bottom">
             <p>
-              &copy; 2021 <b>AbdulkadirKG</b>. All rights reserved.
+              &copy; 2021 <b>AbdulkadirKG</b>. All Rights Reserved. - Made With <i className="fa fa-heart text-danger"></i>
             </p>
             <nav className="footer-menu d-inline">
               <ul>

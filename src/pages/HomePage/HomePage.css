@@ -51,8 +51,9 @@
   background: #fff;
   border-radius: 5px;
   align-items: center;
-  padding: 20px 45px 20px 20px;
+  padding:  20px;
   transition: 300ms transform;
+  width: 100%;
 }
 .component--job-items li a:hover {
   transform: scale(1.007);
@@ -81,6 +82,7 @@
 .component--job-items li a .detail {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .component--job-items li a .detail .title {
   font-weight: bold;

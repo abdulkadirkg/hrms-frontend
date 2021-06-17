@@ -1,8 +1,9 @@
-import './Advertisement.css';
+import "./Advertisement.css";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import React from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Advertisement({ advertisement }) {
   let applicationDeadline = new Date(advertisement.applicationDeadline).toLocaleDateString();
@@ -23,15 +24,17 @@ export default function Advertisement({ advertisement }) {
           </span>
         </Link>
         <div className="card-footer py-1 bg-light">
-          <div className="d-flex primary-color-text flex-wrap justify-content-around">
+          <div className="d-flex primary-color-text flex-wrap justify-content-between">
             <small>{advertisement?.positionCount} Kişi</small>
             <small>{applicationDeadline}</small>
-            <small>
-              {/* {advertisement.salaryMin} ₺ | {advertisement.salaryMax} ₺ */}
-              1 Gün Önce
-            </small>
+            <small>1 Gün</small>
             <small>
               <FontAwesomeIcon className="mr-1" icon={faMapMarkerAlt} /> {advertisement.city?.cityName}
+            </small>
+            <small>
+              <button className="btn m-0 btn-sm py-0 px-1 small btn-outline-danger">
+                <i className="far fa-heart"></i>
+              </button>
             </small>
           </div>
         </div>
