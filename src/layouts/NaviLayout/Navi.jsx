@@ -2,6 +2,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navi.css";
 import { Link } from "react-router-dom";
+import "@fortawesome/fontawesome-free"
 
 export default function Navi() {
   return (
@@ -22,9 +23,9 @@ export default function Navi() {
             </p>
           </span>
           <span className="my-auto">
-            <div className="btn btn-block btn-light font-weight-bold my-auto btn-sm border btn-main shadow">
+            <button className="btn btn-block btn-light font-weight-bold my-auto btn-sm border btn-main shadow">
               <FontAwesomeIcon icon={faUser} /> Giriş Yap
-            </div>
+            </button>
           </span>
         </div>
       </header>

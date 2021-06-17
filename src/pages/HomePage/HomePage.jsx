@@ -8,18 +8,20 @@ import Advertisement from "../../layouts/AdvertisementLayout/Advertisement";
 import CreateAccountBanner from "../../layouts/CreateAccountBannerLayout/CreateAccountBanner";
 import Banner from "../../layouts/BannerLayout/Banner";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 
 export default function Home() {
   const [advertisements, setAdvertisements] = useState([]);
   useEffect(() => {
     let advertisementService = new AdvertisementService();
     advertisementService
-      .getAdvertisementsByPage(1,6)
+      .getAdvertisementsByPage(1, 6)
       // .getAdvertisementsConfirmedByStaff()
 
       .then((result) => setAdvertisements(result.data.data));
   }, []);
+
+  const { favoriteItems } = useSelector((state) => state.favorites);
   return (
     <div>
       <Banner />
@@ -39,22 +41,26 @@ export default function Home() {
             <div className="advertisements">
               <ul className="component--job-items">
                 {advertisements.map((advertisement) => (
-                  <Advertisement
-                    key={advertisement.id}
-                    advertisement={advertisement}
-                  />
+                  <Advertisement key={advertisement.id} advertisement={advertisement} />
                 ))}
               </ul>
               <div className="d-flex justify-content-center">
                 <Link to="/advertisements" className="shadow component--job-button">
-                  <span className="mr-3">Tüm İlanları Gör</span>{" "}
-                  <FontAwesomeIcon icon={faArrowRight} />
+                  <span className="mr-3">Tüm İlanları Gör</span> <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
               </div>
             </div>
           </div>
         </div>
         <CreateAccountBanner />
+        {favoriteItems.length > 0 && (
+          <div className="favorites-popup">
+            <button className="btn my-auto pb-0 px-1 btn-outline-danger">
+              <i className="fa my-auto h2 fa-heart"></i>
+              <small className="text-link text-light">{favoriteItems.length}</small>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

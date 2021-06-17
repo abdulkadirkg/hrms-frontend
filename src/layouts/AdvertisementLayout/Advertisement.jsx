@@ -4,9 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavorite, getFavorite } from "../../store/actions/favoriteActions";
 
 export default function Advertisement({ advertisement }) {
   let applicationDeadline = new Date(advertisement.applicationDeadline).toLocaleDateString();
+  const { favoriteItems } = useSelector((state) => state.favorites);
+  const dispatch = useDispatch();
+  const handleAddFavorite = (advertisement) => {
+    dispatch(addToFavorite(advertisement));
+  };
+  const getAdvertisement = (advertisement) => {
+    dispatch(getFavorite(advertisement));
+  }
   return (
     <div>
       <li className="shadow-sm text-justify" key={advertisement.id}>
@@ -32,7 +42,8 @@ export default function Advertisement({ advertisement }) {
               <FontAwesomeIcon className="mr-1" icon={faMapMarkerAlt} /> {advertisement.city?.cityName}
             </small>
             <small>
-              <button className="btn m-0 btn-sm py-0 px-1 small btn-outline-danger">
+              <button onClick={() => handleAddFavorite(advertisement)} className="btn m-0 btn-sm py-0 px-1 small btn-outline-danger">
+                
                 <i className="far fa-heart"></i>
               </button>
             </small>
