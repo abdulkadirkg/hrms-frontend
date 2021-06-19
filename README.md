@@ -21,6 +21,9 @@
 <b><h1>Canlı Sunucuda Test Etmek İçin - FRONTEND <a href="https://human-resources-management-system.netlify.app/">Tıklayabilirsiniz.</a></h1></b>
 
 <b>HAZIR TEMPLATE DEĞİLDİR</b>
+
+![image](https://user-images.githubusercontent.com/51646136/122650745-42459a00-d13d-11eb-8deb-f694749637ab.png)
+
 <b><h2>İsterler</h2></b>
 <ul>
      <li>
