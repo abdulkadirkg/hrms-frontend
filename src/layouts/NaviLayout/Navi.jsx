@@ -8,7 +8,7 @@ export default function Navi() {
   return (
     <div>
       <div className="engin-demirog alert my-auto border-0 rounded-0 p-1 text-center alert-dismissible small fade show alert-dark bg-primary text-light" role="alert">
-        <b>Engin Hocam</b> Mentörlük İstiyoruz!!! 🙏🙃
+        <b>Engin Hocam</b> Mentorluk İstiyoruz!!! 🙏🙃
         <button type="button " className="p-0 mr-2 close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
