@@ -1,2 +1,12 @@
-.card-footer .d-flex small:not(:last-child){
+.btn-add-favorites{
+    position: absolute;
+    z-index: 99999;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    padding-top: 1px!important;
+}
+
+.btn-add-favorites:hover{
+transform: scale(1.3)!important;
 }

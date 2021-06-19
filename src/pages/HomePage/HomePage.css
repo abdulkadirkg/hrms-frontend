@@ -1,4 +1,3 @@
-
 .component--job-item {
   background: #fff;
   border-radius: 20px;
@@ -51,7 +50,7 @@
   background: #fff;
   border-radius: 5px;
   align-items: center;
-  padding:  20px;
+  padding: 20px;
   transition: 300ms transform;
   width: 100%;
 }
@@ -59,8 +58,7 @@
   transform: scale(1.007);
   text-decoration: none;
   background-color: rgba(21, 51, 107, 0.301);
-  transition: .2s;
-
+  transition: 0.2s;
 }
 .component--job-items li a .avatar {
   min-width: 64px;
@@ -74,10 +72,10 @@
   color: var(--primaryColor);
   border: 5px solid #e7eafb;
 }
-@media (max-width: 767px) {                  
-   .component--job-items li a .avatar {
-      display: none;
-   }
+@media (max-width: 767px) {
+  .component--job-items li a .avatar {
+    display: none;
+  }
 }
 .component--job-items li a .detail {
   display: flex;
@@ -102,19 +100,23 @@
   color: #111127;
 }
 
-.favorites-popup button{
+.favorites-popup button {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
   border-radius: 50%;
-  border: 3px solid darkred;
+  /* border: .00009rem solid darkred; */
+  border: none !important;
+  background-color: rgba(255, 0, 0, 0.178);
 }
 
-.favorites-popup button small{
+.favorites-popup button small {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
   border-radius: 50%;
+  font-weight: lighter;
+  font-size: 12px;
 }

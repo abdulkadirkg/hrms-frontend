@@ -17,11 +17,11 @@ export default function Home() {
     advertisementService
       .getAdvertisementsByPage(1, 6)
       // .getAdvertisementsConfirmedByStaff()
-
       .then((result) => setAdvertisements(result.data.data));
   }, []);
 
   const { favoriteItems } = useSelector((state) => state.favorites);
+
   return (
     <div>
       <Banner />
@@ -55,10 +55,12 @@ export default function Home() {
         <CreateAccountBanner />
         {favoriteItems.length > 0 && (
           <div className="favorites-popup">
-            <button className="btn my-auto pb-0 px-1 btn-outline-danger">
-              <i className="fa my-auto h2 fa-heart"></i>
-              <small className="text-link text-light">{favoriteItems.length}</small>
-            </button>
+            <Link to="/favorites">
+              <button className="btn my-auto pb-0 px-1 btn-outline-danger">
+                <i className="fa my-auto h2 fa-heart"></i>
+                <small className="text-link text-light">{favoriteItems.length}</small>
+              </button>
+            </Link>
           </div>
         )}
       </div>

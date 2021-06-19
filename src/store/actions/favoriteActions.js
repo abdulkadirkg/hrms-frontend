@@ -9,13 +9,6 @@ export function addToFavorite(advertisement) {
     }
 }
 
-export function getFavorite(advertisement) {
-    return {
-        type: GET_FAVORITE,
-        payload: advertisement
-    }
-}
-
 export function removeFromFavorite(advertisement) {
     return {
         type: REMOVE_FROM_FAVORITE,

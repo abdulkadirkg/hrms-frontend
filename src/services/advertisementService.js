@@ -3,19 +3,23 @@ import axios from 'axios';
 let baseUrl = "https://human-resources-management-sys.herokuapp.com/api/";
 export default class AdvertisementService {
     getAdvertisements() {
-        return axios.get(baseUrl + "jobadvertisements/getAllByDateDesc");
+        let advertisements = axios.get(baseUrl + "jobadvertisements/getAllByDateDesc");
+        return advertisements;
     }
     getAdvertisementsByPage(page, count) {
-        return axios.get(baseUrl + "jobadvertisements/getAllByPage?pageNo=" + page + "+&pageSize=" + count);
+        let advertisements = axios.get(baseUrl + "jobadvertisements/getAllByPage?pageNo=" + page + "+&pageSize=" + count);
+        return advertisements;
     }
     getAdvertisementsConfirmedByStaff() {
-        return axios.get(baseUrl + "jobadvertisements/getAllByConfirmedByStaff");
+        let advertisements = axios.get(baseUrl + "jobadvertisements/getAllByConfirmedByStaff");
+        return advertisements;
     }
     getAdvertisment(id) {
-        return axios.get(baseUrl + "jobadvertisements/get?Id=" + id);
+        let advertisements = axios.get(baseUrl + "jobadvertisements/get?Id=" + id);
+        return advertisements;
     }
-    saveAdvertisement(advertisement){
-        let result = axios.post(baseUrl + "jobadvertisements/add", advertisement);
-        return result;
+    saveAdvertisement(advertisement) {
+        let advertisements = axios.post(baseUrl + "jobadvertisements/add", advertisement);
+        return advertisements;
     }
 }

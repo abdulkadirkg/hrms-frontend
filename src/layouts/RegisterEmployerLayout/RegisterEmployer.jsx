@@ -35,7 +35,7 @@ export default function RegisterEmployer() {
           let employerService = new EmployerService();
           employerService.registerEmployer(values).then((result) => {
             addToast(result.data.message, { appearance: result.data.success ? "success" : "error", autoDismiss: true });
-            console.log(result.data);
+            // console.log(result.data);
           });
         }}
       >

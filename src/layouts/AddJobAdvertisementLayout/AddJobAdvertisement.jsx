@@ -74,7 +74,7 @@ export default function AddJobAdvertisement() {
             <hr />
             <div className="row mb-2">
               <div className="col-md-4">
-                <select id={values.city.id} value={values.city} onChange={handleChange} onBlur={handleBlur} required className="mt-1">
+                <select id="city" value={values.city} onChange={handleChange} onBlur={handleBlur} required className="mt-1">
                   <option>Şehir Seçiniz</option>
                   {cities.map((city) => (
                     <option key={city.id} value={JSON.stringify(city)}>

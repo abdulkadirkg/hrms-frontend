@@ -1,4 +1,4 @@
-import { ADD_TO_FAVORITE, GET_FAVORITE, REMOVE_FROM_FAVORITE } from "../actions/favoriteActions";
+import { ADD_TO_FAVORITE, REMOVE_FROM_FAVORITE } from "../actions/favoriteActions";
 import { favoriteItems } from "../initialValues/favoriteItems";
 
 const initialState = {
@@ -21,12 +21,6 @@ export default function favoriteReducer(state = initialState, { type, payload })
             return {
                 ...state,
                 favoriteItems: state.favoriteItems.filter((f) => f.advertisement.id !== payload.id)
-            }
-        case GET_FAVORITE:
-            let getAdvertisement = state.favoriteItems.find((f) => f.advertisement.id === payload.id)
-            return {
-                ...state,
-                favoriteItems: state.favoriteItems.filter((f) => f.advertisement.id === payload.id)
             }
         default:
             return state;
