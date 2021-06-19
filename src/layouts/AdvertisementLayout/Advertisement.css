@@ -7,6 +7,6 @@
     padding-top: 1px!important;
 }
 
-.btn-add-favorites:hover{
+.btn-add-favorites:active{
 transform: scale(1.3)!important;
 }
