@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import PositionService from "../../services/positionService";
 import JobTypeService from "../../services/jobTypeService";
 import { useSelector } from "react-redux";
+import Preloader from "../../utils/PreloaderUtil/Preloader";
 
 export default function Banner() {
   const [positions, setPositions] = useState([]);
@@ -24,7 +25,7 @@ export default function Banner() {
     });
   }, []);
 
-  const { cities } = useSelector((state) => state.allCities);
+  const { cities,error,pending } = useSelector((state) => state.allCities);
   return (
     <div>
       <section className="banner-section">
@@ -67,6 +68,7 @@ export default function Banner() {
                 ))}
               </select>
               <div className="mb-1">
+                {pending?<Preloader/>:}
                 {cities.slice(0, 3).map((city) => (
                   <small className="btn btn-sm btn-light mt-1 border border-none city-badge" key={city.id} value={city}>
                     <FontAwesomeIcon icon={faMapMarkerAlt} /> {city.cityName}
