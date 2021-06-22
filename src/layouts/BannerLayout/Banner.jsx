@@ -1,25 +1,13 @@
 import "./Banner.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLaptop,
-  faMapMarkerAlt,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faLaptop, faMapMarkerAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from "react";
 
 import PositionService from "../../services/positionService";
-import CityService from "../../services/cityService";
 import JobTypeService from "../../services/jobTypeService";
+import { useSelector } from "react-redux";
 
 export default function Banner() {
-  const [cities, setCities] = useState([]);
-  useEffect(() => {
-    let cityService = new CityService();
-    cityService.getCitiesByCount(3).then((result) => {
-      setCities(result.data.data);
-    });
-  }, []);
-
   const [positions, setPositions] = useState([]);
   useEffect(() => {
     let positionService = new PositionService();
@@ -35,34 +23,25 @@ export default function Banner() {
       setJobTypes(result.data.data);
     });
   }, []);
+
+  const { cities } = useSelector((state) => state.allCities);
   return (
     <div>
       <section className="banner-section">
         <div className="container border-main shadow-lg text-dark">
           <div className="form-row">
             <div className="col-xl-5">
-              <input
-                type="text"
-                className="form-control form-control-sm font-weight-light"
-                placeholder="Pozisyon Ara"
-              />
-              <div className="my-1 d-block">
+              <input type="text" className="form-control form-control-sm font-weight-light" placeholder="Pozisyon Ara" />
+              <div className="mb-1 d-block">
                 {positions.map((position) => (
-                  <small
-                    className="btn btn-sm btn-light mt-1 border border-none city-badge"
-                    key={position.id}
-                    value={position}
-                  >
+                  <small className="btn btn-sm btn-light mt-1 border border-none city-badge" key={position.id} value={position}>
                     <FontAwesomeIcon icon={faLaptop} /> {position.jobName}
                   </small>
                 ))}
               </div>
             </div>
             <div className="col-xl-3">
-              <select
-                className="form-control-sm font-weight-light form-control mr-sm-2"
-                id="inlineFormCustomSelect"
-              >
+              <select className="form-control-sm font-weight-light form-control mr-sm-2" id="inlineFormCustomSelect">
                 <option>İş Tipi Seçiniz</option>
                 {jobTypes.map((jobType) => (
                   <option key={jobType.id} value={jobType}>
@@ -70,23 +49,16 @@ export default function Banner() {
                   </option>
                 ))}
               </select>
-              <div className="my-1">
+              <div className="mb-1">
                 {jobTypes.map((jobType) => (
-                  <small
-                    className="btn btn-sm btn-light mt-1 border border-none city-badge"
-                    key={jobType.id}
-                    value={jobType}
-                  >
+                  <small className="btn btn-sm btn-light mt-1 border border-none city-badge" key={jobType.id} value={jobType}>
                     <FontAwesomeIcon icon={faMapMarkerAlt} /> {jobType.jobType}
                   </small>
                 ))}
               </div>
             </div>
             <div className="col-xl-3">
-              <select
-                className="form-control-sm font-weight-light form-control mr-sm-2"
-                id="inlineFormCustomSelect"
-              >
+              <select className="form-control-sm font-weight-light form-control mr-sm-2" id="inlineFormCustomSelect">
                 <option>Şehir Seçiniz</option>
                 {cities.map((city) => (
                   <option key={city.id} value={city}>
@@ -94,13 +66,9 @@ export default function Banner() {
                   </option>
                 ))}
               </select>
-              <div className="my-1">
-                {cities.map((city) => (
-                  <small
-                    className="btn btn-sm btn-light mt-1 border border-none city-badge"
-                    key={city.id}
-                    value={city}
-                  >
+              <div className="mb-1">
+                {cities.slice(0, 3).map((city) => (
+                  <small className="btn btn-sm btn-light mt-1 border border-none city-badge" key={city.id} value={city}>
                     <FontAwesomeIcon icon={faMapMarkerAlt} /> {city.cityName}
                   </small>
                 ))}

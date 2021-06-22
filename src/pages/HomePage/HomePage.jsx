@@ -44,7 +44,7 @@ export default function Home() {
                 <PreloaderUtil />
               ) : error ? <ErrorAlert error={error}/> : (
                 <ul className="component--job-items">
-                  {advertisements.splice(0,5).map((advertisement) => (
+                  {advertisements.slice(0,5).map((advertisement) => (
                     <Advertisement key={advertisement.id} advertisement={advertisement} />
                   ))}
                 </ul>
