@@ -8,7 +8,9 @@ import { ToastProvider } from "react-toast-notifications";
 import ScrollToTop from "./utils/ScrollToTop/ScrollToTopUtil"
 import { Provider } from 'react-redux';
 import { configureStore } from "./store/configureStore"
+import { _fetchAdvertisements } from './store/actions/jobAdvertisementActions';
 const store = configureStore();
+store.dispatch(_fetchAdvertisements())
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

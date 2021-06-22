@@ -1,27 +1,28 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./HomePage.css";
 import Filters from "../../layouts/FiltersLayout/Filters";
-import AdvertisementService from "../../services/advertisementService";
 import Advertisement from "../../layouts/AdvertisementLayout/Advertisement";
 import CreateAccountBanner from "../../layouts/CreateAccountBannerLayout/CreateAccountBanner";
 import Banner from "../../layouts/BannerLayout/Banner";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import PreloaderUtil from "../../utils/PreloaderUtil/Preloader";
+import ErrorAlert from "../../utils/ErrorUtil/ErrorAlert";
 
 export default function Home() {
-  const [advertisements, setAdvertisements] = useState([]);
-  useEffect(() => {
-    let advertisementService = new AdvertisementService();
-    advertisementService
-      .getAdvertisementsByPage(1, 6)
-      // .getAdvertisementsConfirmedByStaff()
-      .then((result) => setAdvertisements(result.data.data));
-  }, []);
+  // const [advertisements, setAdvertisements] = useState([]);
+  // useEffect(() => {
+  //   let advertisementService = new AdvertisementService();
+  //   advertisementService
+  //     .getAdvertisementsByPage(1, 6)
+  //     // .getAdvertisementsConfirmedByStaff()
+  //     .then((result) => setAdvertisements(result.data.data));
+  // }, []);
 
   const { favoriteItems } = useSelector((state) => state.favorites);
-
+  const { pending, error, advertisements } = useSelector((state) => state.advertisements);
   return (
     <div>
       <Banner />
@@ -39,11 +40,16 @@ export default function Home() {
             </strong>
 
             <div className="advertisements">
-              <ul className="component--job-items">
-                {advertisements.map((advertisement) => (
-                  <Advertisement key={advertisement.id} advertisement={advertisement} />
-                ))}
-              </ul>
+              {pending ? (
+                <PreloaderUtil />
+              ) : error ? <ErrorAlert error={error}/> : (
+                <ul className="component--job-items">
+                  {advertisements.splice(0,5).map((advertisement) => (
+                    <Advertisement key={advertisement.id} advertisement={advertisement} />
+                  ))}
+                </ul>
+              )}
+
               <div className="d-flex justify-content-center">
                 <Link to="/advertisements" className="shadow component--job-button">
                   <span className="mr-3">Tüm İlanları Gör</span> <FontAwesomeIcon icon={faArrowRight} />

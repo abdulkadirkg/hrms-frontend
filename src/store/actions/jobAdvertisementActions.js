@@ -1,16 +1,38 @@
-export const GET_ADVERTISEMENTS = "GET_ADVERTISEMENTS";
-export const SET_ADVERTISEMENTS = "SET_ADVERTISEMENTS";
+import AdvertisementService from "../../services/advertisementService";
 
-export function setAdvertisements(advertisements) {
+export const FETCH_ADVERTISEMENTS_PENDING = "FETCH_ADVERTISEMENTS_PENDING";
+export const FETCH_ADVERTISEMENTS_SUCCESS = "FETCH_ADVERTISEMENTS_SUCCESS";
+export const FETCH_ADVERTISEMENTS_ERROR = "FETCH_ADVERTISEMENTS_ERROR";
+
+export function fetchAdvertisementsPending() {
     return {
-        type: SET_ADVERTISEMENTS,
+        type: FETCH_ADVERTISEMENTS_PENDING
+    }
+}
+export function fetchAdvertisementsSuccess(advertisements) {
+    return {
+        type: FETCH_ADVERTISEMENTS_SUCCESS,
         payload: advertisements
     }
 }
-
-export function getAdvertisements(advertisements) {
+export function fetchAdvertisementsError(error) {
     return {
-        type: GET_ADVERTISEMENTS,
-        payload: advertisements
+        type: FETCH_ADVERTISEMENTS_ERROR,
+        payload: error
+    }
+}
+
+//-------
+
+export const _fetchAdvertisements = () => {
+    return async dispatch => {
+        let advertisementService = new AdvertisementService();
+            dispatch(fetchAdvertisementsPending());
+            await advertisementService.getAdvertisements().then(response => {
+                dispatch(fetchAdvertisementsSuccess(response.data.data))
+            }).catch(error=>{
+                dispatch(fetchAdvertisementsError(error.message))
+            })
+
     }
 }

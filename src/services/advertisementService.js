@@ -1,9 +1,8 @@
 import axios from 'axios';
-
 let baseUrl = "https://human-resources-management-sys.herokuapp.com/api/";
 export default class AdvertisementService {
-    getAdvertisements() {
-        let advertisements = axios.get(baseUrl + "jobadvertisements/getAllByDateDesc");
+    async getAdvertisements() {
+        let advertisements = await axios.get(baseUrl + "jobadvertisements/getAllByDateDesc");
         return advertisements;
     }
     getAdvertisementsByPage(page, count) {
@@ -18,7 +17,7 @@ export default class AdvertisementService {
         let advertisements = axios.get(baseUrl + "jobadvertisements/get?Id=" + id);
         return advertisements;
     }
-    saveAdvertisement(advertisement){
+    saveAdvertisement(advertisement) {
         let advertisements = axios.post(baseUrl + "jobadvertisements/add", advertisement);
         return advertisements;
     }

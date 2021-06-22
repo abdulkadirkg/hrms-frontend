@@ -5,7 +5,7 @@ import jobAdvertisementReducer from "./reducers/jobAdvertisementReducer";
 
 const rootReducer = combineReducers({
     favorites: favoriteReducer, // name changed 
-    jobAdvertisements : jobAdvertisementReducer
+    advertisements : jobAdvertisementReducer
 })
 
 export default rootReducer;

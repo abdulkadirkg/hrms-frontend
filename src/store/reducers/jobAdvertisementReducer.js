@@ -1,21 +1,32 @@
-import { SET_ADVERTISEMENTS, GET_ADVERTISEMENTS } from "../actions/jobAdvertisementActions"
+import { FETCH_ADVERTISEMENTS_PENDING, FETCH_ADVERTISEMENTS_SUCCESS, FETCH_ADVERTISEMENTS_ERROR } from "../actions/jobAdvertisementActions"
 import { jobAdvertisements } from "../initialValues/jobAdvertisements"
 
 const initialState = {
-    jobAdvertisements: jobAdvertisements
+    advertisements: jobAdvertisements,
+    pending: false,
+    error: null
 }
 
 export default function jobAdvertisementReducer(state = initialState, { type, payload }) {
     switch (type) {
-        case SET_ADVERTISEMENTS:
+        case FETCH_ADVERTISEMENTS_PENDING:
             return {
                 ...state,
-                jobAdvertisements: payload
+                pending: true,
+                error: null
             }
-        case GET_ADVERTISEMENTS:
+        case FETCH_ADVERTISEMENTS_SUCCESS:
             return {
                 ...state,
-                jobAdvertisements: state.jobAdvertisements
+                advertisements: payload,
+                pending: false,
+                error: null
+            }
+        case FETCH_ADVERTISEMENTS_ERROR:
+            return {
+                ...state,
+                pending: false,
+                error: payload
             }
         default:
             return state;

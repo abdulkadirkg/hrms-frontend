@@ -47,11 +47,6 @@ export default function Advertisement({ advertisement }) {
             <small>
               <FontAwesomeIcon className="mr-1" icon={faMapMarkerAlt} /> {advertisement.city?.cityName}
             </small>
-            {/* <small>
-              <button onClick={() => handleAddFavorite(advertisement)} className="btn m-0 btn-sm py-0 px-1 small btn-outline-danger">
-                <i className="far fa-heart"></i>
-              </button>
-            </small> */}
           </div>
         </div>
       </li>
