@@ -1,33 +1,16 @@
 import "./Banner.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptop, faMapMarkerAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
-import React, { useState, useEffect } from "react";
-
-import PositionService from "../../services/positionService";
-import JobTypeService from "../../services/jobTypeService";
+import { faMapMarkerAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 import { useSelector } from "react-redux";
 import PreloaderUtil from "../../utils/PreloaderUtil/Preloader";
 
 import ErrorAlert from "../../utils/ErrorUtil/ErrorAlert";
 
 export default function Banner() {
-  const [positions, setPositions] = useState([]);
-  useEffect(() => {
-    let positionService = new PositionService();
-    positionService.getPositionsByCount(3).then((result) => {
-      setPositions(result.data.data);
-    });
-  }, []);
-
-  const [jobTypes, setJobTypes] = useState([]);
-  useEffect(() => {
-    let jobTypeService = new JobTypeService();
-    jobTypeService.getJobTypesByCount(2).then((result) => {
-      setJobTypes(result.data.data);
-    });
-  }, []);
-
   const { cities, error, pending } = useSelector((state) => state.allCities);
+  const { jobTypes, errorJobTypes,pendingJobTypes } = useSelector(state => state.jobTypes);
+  const { positions, errorPositions, pendingPositions} = useSelector(state => state.positions)
   return (
     <div>
       <section className="banner-section">
@@ -36,11 +19,17 @@ export default function Banner() {
             <div className="col-xl-5">
               <input type="text" className="form-control form-control-sm font-weight-light" placeholder="Pozisyon Ara" />
               <div className="mb-1 d-block">
-                {positions.map((position) => (
-                  <small className="btn btn-sm btn-light mt-1 border border-none city-badge" key={position.id} value={position}>
-                    <FontAwesomeIcon icon={faLaptop} /> {position.jobName}
-                  </small>
-                ))}
+                {pendingPositions ? (
+                  <PreloaderUtil />
+                ) : errorPositions ? (
+                  <ErrorAlert error={error} />
+                ) : (
+                  positions.slice(0, 3).map((position) => (
+                    <small className="btn btn-sm btn-light mt-1 border border-none city-badge" key={position.id} value={position}>
+                      <i className="fa fa-desktop"/> {position.jobName}
+                    </small>
+                  ))
+                )}
               </div>
             </div>
             <div className="col-xl-3">
@@ -53,11 +42,17 @@ export default function Banner() {
                 ))}
               </select>
               <div className="mb-1">
-                {jobTypes.map((jobType) => (
-                  <small className="btn btn-sm btn-light mt-1 border border-none city-badge" key={jobType.id} value={jobType}>
-                    <FontAwesomeIcon icon={faMapMarkerAlt} /> {jobType.jobType}
-                  </small>
-                ))}
+                {pendingJobTypes ? (
+                  <PreloaderUtil />
+                ) : errorJobTypes ? (
+                  <ErrorAlert error={error} />
+                ) : (
+                  jobTypes.slice(0, 3).map((jobType) => (
+                    <small className="btn btn-sm btn-light mt-1 border border-none city-badge" key={jobType.id} value={jobType}>
+                      <i className="far fa-clock"/> {jobType.jobType}
+                    </small>
+                  ))
+                )}
               </div>
             </div>
             <div className="col-xl-3">

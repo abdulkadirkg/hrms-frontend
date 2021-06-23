@@ -10,9 +10,19 @@ import { Provider } from 'react-redux';
 import { configureStore } from "./store/configureStore"
 import { _fetchAdvertisements } from './store/actions/jobAdvertisementActions';
 import { _fetchCities } from './store/actions/cityActions';
+import { _fetchJobTypes } from './store/actions/jobTypeActions';
+import { _fetchPositions } from './store/actions/positionActions';
 const store = configureStore();
-store.dispatch(_fetchAdvertisements())
-store.dispatch(_fetchCities())
+const _init = [
+  _fetchAdvertisements(),
+  _fetchCities(),
+  _fetchJobTypes(),
+  _fetchPositions()
+]
+
+_init.map(func => {
+  return store.dispatch(func);
+})
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

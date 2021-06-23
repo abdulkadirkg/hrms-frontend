@@ -41,7 +41,7 @@ export default function Home() {
 
             <div className="advertisements">
               {pending ? (
-                <PreloaderUtil />
+                <PreloaderUtil/>
               ) : error ? <ErrorAlert error={error}/> : (
                 <ul className="component--job-items">
                   {advertisements.slice(0,5).map((advertisement) => (
