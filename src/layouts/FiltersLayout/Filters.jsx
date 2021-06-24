@@ -1,10 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faFilter, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import "./Filters.css";
-import React, { useState, useEffect } from "react";
-import CityService from "../../services/cityService";
-import JobTypeService from "../../services/jobTypeService";
-import PositionService from "../../services/positionService";
+import React from "react";
 import { useSelector } from "react-redux";
 
 export default function Filters() {
