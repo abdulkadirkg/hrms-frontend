@@ -13,7 +13,7 @@ export default function Dashboard() {
       <Route exact path="/advertisement/:id" component={AdvertisementDetailPage} />
       <Route exact path="/register-employer" component={RegisterEmployerPage} />
       <Route exact path="/register-candidate" component={RegisterCandidatePage} />
-      <Route exact path="/add-jobadvertisement" component={AddJobAdvertisementPage} />
+      <Route exact path="/jobadvertisement/add" component={AddJobAdvertisementPage} />
       <Route exact path="/favorites" component={HomePage} />
 
       {/* <Route path="/cart" component={CartDetail} /> */}

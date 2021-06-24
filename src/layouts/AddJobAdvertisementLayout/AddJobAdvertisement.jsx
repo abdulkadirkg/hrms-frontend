@@ -41,13 +41,13 @@ export default function AddJobAdvertisement() {
           values.city = JSON.parse(values.city);
           values.position = JSON.parse(values.position);
           values.jobType = JSON.parse(values.jobType);
-          // advertisementService.saveAdvertisement(values).then((result) => {
-          //   addToast(result.data.message, { appearance: result.data.success ? "success" : "error", autoDismiss: true });
-          // });
+          advertisementService.saveAdvertisement(values).then((result) => {
+            addToast(result.data.message, { appearance: result.data.success ? "success" : "error", autoDismiss: true });
+          });
         }}
         handleChange={(change) => console.log(change)}
       >
-        {({ values, errors, handleChange, handleSubmit, setFieldValue, touched, handleReset, handleBlur, dirty, isSubmitting }) => (
+        {({ handleSubmit, dirty, isSubmitting }) => (
           <form className="add-job-advertisement-form p-4" onSubmit={handleSubmit}>
             <h5 className="font-weight-bold text-center">İlan Oluştur</h5>
             <small className="d-block text-center text-muted">İlan Oluştur, Aradığın Liyakate Ulaş...</small>
