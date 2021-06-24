@@ -5,31 +5,12 @@ import React, { useState, useEffect } from "react";
 import CityService from "../../services/cityService";
 import JobTypeService from "../../services/jobTypeService";
 import PositionService from "../../services/positionService";
+import { useSelector } from "react-redux";
 
 export default function Filters() {
-  const [cities, setCities] = useState([]);
-  useEffect(() => {
-    let cityService = new CityService();
-    cityService.getCities().then((result) => {
-      setCities(result.data.data);
-    });
-  }, []);
-
-  const [jobTypes, setJobTypes] = useState([]);
-  useEffect(() => {
-    let jobTypeService = new JobTypeService();
-    jobTypeService.getJobTypes().then((result) => {
-      setJobTypes(result.data.data);
-    });
-  }, []);
-
-  const [positions, setPositions] = useState([]);
-  useEffect(() => {
-    let positionService = new PositionService();
-    positionService.getPositions().then((result) => {
-      setPositions(result.data.data);
-    });
-  }, []);
+  const { cities, error, pending } = useSelector((state) => state.allCities);
+  const { jobTypes, errorJobTypes, pendingJobTypes } = useSelector((state) => state.jobTypes);
+  const { positions, errorPositions, pendingPositions } = useSelector((state) => state.positions);
   return (
     <div>
       <aside className="component--job-filter shadow-sm">
@@ -56,6 +37,9 @@ export default function Filters() {
             <li>
               <label htmlFor="position">Pozisyon</label>
               <select name="position" id="position">
+                <option value="" disabled hidden>
+                  Şehir Seçiniz
+                </option>
                 {positions.map((position) => (
                   <option key={position.id} value={position}>
                     {position.jobName}
