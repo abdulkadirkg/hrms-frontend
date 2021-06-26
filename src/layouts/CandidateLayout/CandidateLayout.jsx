@@ -5,6 +5,7 @@ import "./CandidateLayout.css";
 export default function CandidateLayout({ detailedCandidateDto }) {
   let candidate = detailedCandidateDto.candidate;
   let schools = detailedCandidateDto.schools;
+  let experiences = detailedCandidateDto.jobExperiences;
   return (
     <div className="container my-4 border-main shadow-sm p-4">
       {candidate ? (
@@ -38,16 +39,46 @@ export default function CandidateLayout({ detailedCandidateDto }) {
               {/* )} */}
             </span>
           </div>
-          <div className="col-12 border bg-light rounded px-2 py-1">
-            <strong>Eğitim Bilgileri;</strong>
+          <strong>
+            <i class="fas fa-user-graduate"></i> Eğitim Bilgileri;
+          </strong>
+          <div className="col-12 my-2 border bg-light rounded px-2 py-1">
+            <div className="row p-1 text-muted school-row border-0 border font-weight-bold">
+              <div className="col-3">Okul</div>
+              <div className="col-3">Bölüm</div>
+              <div className="col-2">Başlangıç</div>
+              <div className="col-2">Bitiş</div>
+              <div className="col-2">Ortalama</div>
+            </div>
             {schools.map((school) => {
               return (
                 <div key={school.id} className="row shadow-sm school-row bg-light rounded p-1">
                   <div className="col-3">{school.schoolName}</div>
-                  <div className="col-3">{school.departmentName}</div>
+                  <div className="col-3 font-weight-bold">{school.departmentName}</div>
                   <div className="col-2">{new Date(school.startDate).toLocaleDateString()}</div>
                   <div className="col-2">{new Date(school.endDate).toLocaleDateString()}</div>
-                  <div className="col-2">{(school.grade||"3.40") + " Ort."}</div>
+                  <div className="col-2">{(school.grade || "3.40") + " Ort."}</div>
+                </div>
+              );
+            })}
+          </div>
+          <strong>
+            <i class="fas fa-business-time"></i> İş Tecrübeleri;
+          </strong>
+          <div className="col-12 my-2 border bg-light rounded px-2 py-1">
+            <div className="row p-1 text-muted school-row border-0 border font-weight-bold">
+              <div className="col-3">Pozisyon</div>
+              <div className="col-3">İş Yeri</div>
+              <div className="col-3">Başlangıç</div>
+              <div className="col-3">Bitiş</div>
+            </div>
+            {experiences.map((experience) => {
+              return (
+                <div key={experience.id} className="row shadow-sm school-row bg-light rounded p-1">
+                  <div className="col-3">{experience.jobPosition}</div>
+                  <div className="col-3 font-weight-bold">{experience.workplace}</div>
+                  <div className="col-3">{new Date(experience.startDate).toLocaleDateString()}</div>
+                  <div className="col-3">{(experience.endDate && new Date(experience.endDate).toLocaleDateString()) || "Devam Ediyor"}</div>
                 </div>
               );
             })}
