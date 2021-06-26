@@ -1,0 +1,16 @@
+.profile-picture {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  object-fit: cover;
+}
+
+.school-row {
+  /* background-color: rgb(233, 233, 233)!important; */
+  border: 1px solid #cacaca;
+  margin: 5px 0;
+}

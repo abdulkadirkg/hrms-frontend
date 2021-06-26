@@ -12,7 +12,7 @@ export default class CandidateService {
         return axios.get(baseUrl + "candidates/getAllByConfirmedByStaff");
     }
     getCandidate(id) {
-        return axios.get(baseUrl + "candidates/get?Id=" + id);
+        return axios.get(baseUrl + "candidates/getDetailedCandidate?id=" + id);
     }
     registerCandidate(candidate){
         let result = axios.post(baseUrl + "candidates/register", candidate);

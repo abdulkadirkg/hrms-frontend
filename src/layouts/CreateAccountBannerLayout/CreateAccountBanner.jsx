@@ -21,7 +21,7 @@ export default function CreateAccountBanner() {
               </blockquote>
             </div>
             <div className="col-md-2 my-auto">
-              <Link to="/register-candidate">
+              <Link to="/register/candidate">
                 <div className="btn btn-light shadow font-weight-bold btn-lg w-100">Üye Ol</div>
               </Link>
             </div>
@@ -42,7 +42,7 @@ export default function CreateAccountBanner() {
               </blockquote>
             </div>
             <div className="col-md-2 my-auto">
-              <Link to="/register-employer">
+              <Link to="/register/employer">
                 <div className="btn btn-light shadow font-weight-bold btn-lg w-100">Üye Ol</div>
               </Link>
             </div>
