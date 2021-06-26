@@ -10,7 +10,7 @@ export default function CandidateLayout({ detailedCandidateDto }) {
     <div className="container my-4 border-main shadow-sm p-4">
       {candidate ? (
         <div className="row">
-          <div className="col-12 d-flex flex-column align-items-center justify-content-center">
+          <div className="col-12 d-flex flex-column align-items-center mb-3 justify-content-center">
             <img src={candidate?.profilePicture} className="img-thumbnail shadow profile-picture" alt="profilePicture" />
             <h3 className="font-weight-bold mb-0">
               {candidate.name + " " + candidate.surname + " "}
@@ -40,7 +40,7 @@ export default function CandidateLayout({ detailedCandidateDto }) {
             </span>
           </div>
           <strong>
-            <i class="fas fa-user-graduate"></i> Eğitim Bilgileri;
+            <i className="fas fa-user-graduate"></i> Eğitim Bilgileri;
           </strong>
           <div className="col-12 my-2 border bg-light rounded px-2 py-1">
             <div className="row p-1 text-muted school-row border-0 border font-weight-bold">
@@ -63,20 +63,20 @@ export default function CandidateLayout({ detailedCandidateDto }) {
             })}
           </div>
           <strong>
-            <i class="fas fa-business-time"></i> İş Tecrübeleri;
+            <i className="fas fa-business-time"></i> İş Tecrübeleri;
           </strong>
           <div className="col-12 my-2 border bg-light rounded px-2 py-1">
             <div className="row p-1 text-muted school-row border-0 border font-weight-bold">
-              <div className="col-3">Pozisyon</div>
               <div className="col-3">İş Yeri</div>
+              <div className="col-3">Pozisyon</div>
               <div className="col-3">Başlangıç</div>
               <div className="col-3">Bitiş</div>
             </div>
             {experiences.map((experience) => {
               return (
                 <div key={experience.id} className="row shadow-sm school-row bg-light rounded p-1">
-                  <div className="col-3">{experience.jobPosition}</div>
-                  <div className="col-3 font-weight-bold">{experience.workplace}</div>
+                  <div className="col-3">{experience.workplace}</div>
+                  <div className="col-3 font-weight-bold">{experience.jobPosition}</div>
                   <div className="col-3">{new Date(experience.startDate).toLocaleDateString()}</div>
                   <div className="col-3">{(experience.endDate && new Date(experience.endDate).toLocaleDateString()) || "Devam Ediyor"}</div>
                 </div>
