@@ -3,13 +3,22 @@
     display: none;
   }
   .d-mobile-img{
-      width: 70px!important;
-      height: 70px!important;
+      width: 65px!important;
+      height: 65px!important;
       margin-top: 10px!important;
   }
 
   .sidebar .sidebar-menu .list-group-item{
       padding: 5px 0 !important;
       margin: 0!important;
+  }
+
+  .sidebar .sidebar-menu{
+      
+      display: block!important;
+  }
+
+  .sidebar{
+      max-width: 95px;
   }
 }

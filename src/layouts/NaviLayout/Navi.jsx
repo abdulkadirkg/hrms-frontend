@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navi.css";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free"
+import LoggedIn from "../LoggedInLayout/LoggedIn";
 
 export default function Navi() {
+  let loggedIn = true;
   return (
     <div>
       <div className="engin-demirog alert my-auto border-0 rounded-0 p-1 text-center alert-dismissible small fade show alert-dark bg-primary text-light" role="alert">
@@ -23,9 +25,13 @@ export default function Navi() {
             </p>
           </span>
           <span className="my-auto">
-            <button className="btn btn-block btn-light font-weight-bold my-auto btn-sm border btn-main shadow">
-              <FontAwesomeIcon icon={faUser} /> Giriş Yap
-            </button>
+            {loggedIn ? (
+              <LoggedIn />
+            ) : (
+              <button className="btn btn-block btn-light font-weight-bold my-auto btn-sm border btn-main shadow">
+                <FontAwesomeIcon icon={faUser} /> Giriş Yap
+              </button>
+            )}
           </span>
         </div>
       </header>

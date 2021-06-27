@@ -26,9 +26,9 @@ export default function ProfilePage() {
   return (
     <div>
       {candidate ? (
-        <div className="container sidebar">
+        <div className="container">
           <div className="row my-4">
-            <div className="col-3 pr-1">
+            <div className="col-3 pr-1 sidebar">
               <div className="border-main shadow-sm m-auto d-flex flex-column justify-content-center align-items-center">
                 <img src={candidate?.profilePicture} className="img-thumbnail d-mobile-img mt-4 shadow profile-picture" alt="profilePicture" />
                 <h6 className="mb-0 mt-2 d-mobile">
@@ -47,34 +47,34 @@ export default function ProfilePage() {
                 </small>
                 <span className="text-center mt-2">
                   {/* {candidate.githubAddress && ( */}
-                  <a href={candidate.githubAddress || "https://github.com/abdulkadirkg"} target="_blank">
+                  <a href={candidate.githubAddress} target="_blank">
                     <i className="fab h2 fa-github text-dark mx-1"></i>
                   </a>
                   {/* )} */}
                   {/* {candidate.linkedinAddress && ( */}
-                  <a href={candidate.linkedinAddress || "https://www.linkedin.com/in/abdulkadirkaradag"} target="_blank">
+                  <a href={candidate.linkedinAddress} target="_blank">
                     <i className="fab h2 primary-color-text fa-linkedin mx-1"></i>
                   </a>
                   {/* )} */}
                 </span>
                 <hr className="h-100 mt-1 w-100" />
-                <div className="list-group w-100 sidebar-menu">
-                  <Link to={"resumes"} type="button" className="list-group-item list-group-item-action px-0 text-center" aria-current="true">
+                <div className="list-group w-100">
+                  <Link to={"resumes"} type="button" className="list-group-item list-group-item-action sidebar-menu d-flex justify-content-between px-2 text-center" aria-current="true">
                     <i className="fas fa-file"></i> <span className="d-mobile">Özgeçmişlerim</span>
                   </Link>
-                  <Link to={"schools"} type="button" className="list-group-item list-group-item-action px-0 text-center">
+                  <Link to={"schools"} type="button" className="list-group-item list-group-item-action sidebar-menu d-flex justify-content-between px-2 text-center">
                     <i className="fas fa-graduation-cap"></i> <span className="d-mobile">Öğrenim Bilgilerim</span>
                   </Link>
-                  <Link to={"experiences"} type="button" className="list-group-item list-group-item-action px-0 text-center">
+                  <Link to={"experiences"} type="button" className="list-group-item list-group-item-action sidebar-menu d-flex justify-content-between px-2 text-center">
                     <i className="fas fa-cash-register"></i> <span className="d-mobile">İş Tecrübelerim</span>
                   </Link>
-                  <Link to={"languages"} type="button" className="list-group-item list-group-item-action px-0 text-center">
+                  <Link to={"languages"} type="button" className="list-group-item list-group-item-action sidebar-menu d-flex justify-content-between px-2 text-center">
                     <i className="fas fa-flag-usa"></i> <span className="d-mobile">Yabancı Diller</span>
                   </Link>
-                  <Link to={"skills"} type="button" className="list-group-item list-group-item-action px-0 text-center">
+                  <Link to={"skills"} type="button" className="list-group-item list-group-item-action sidebar-menu d-flex justify-content-between px-2 text-center">
                     <i className="fas fa-american-sign-language-interpreting"></i> <span className="d-mobile">Yetenekler</span>
                   </Link>
-                  <Link to={"settings"} type="button" className="list-group-item list-group-item-action px-0 text-center">
+                  <Link to={"settings"} type="button" className="list-group-item list-group-item-action sidebar-menu d-flex justify-content-between px-2 text-center">
                     <i className="fas fa-cog"></i> <span className="d-mobile">Seçenekler</span>
                   </Link>
                 </div>
@@ -92,7 +92,9 @@ export default function ProfilePage() {
             </div>
           </div>
         </div>
-      ):<Preloader className="my-5"/>}
+      ) : (
+        <Preloader className="my-5" />
+      )}
     </div>
   );
 }

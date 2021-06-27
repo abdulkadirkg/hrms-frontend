@@ -23,7 +23,7 @@ export default function Banner() {
     // city: Yup.string().required("Lütfen Şehir Seçiniz"),
     // position: Yup.string().required("Lütfen Pozisyon Seçiniz"),
     // jobType: Yup.string().required("Lütfen İş Türü Seçiniz"),
-    position: Yup.string().required("Lütfen Açıklama Giriniz"),
+    position: Yup.string().required("Lütfen Arama Terimi Giriniz"),
   });
   return (
     <div>
@@ -111,7 +111,7 @@ export default function Banner() {
                     </div>
                   </div>
                   <div className="col-xl-1 h-100">
-                    <button type="submit" disabled={!values.position} className="btn btn-block btn-light font-weight-bold my-auto btn-sm border btn-main shadow">
+                    <button type="submit" className="btn btn-block btn-light font-weight-bold my-auto btn-sm border btn-main shadow">
                       <FontAwesomeIcon icon={faSearch} /> Ara
                     </button>
                   </div>
