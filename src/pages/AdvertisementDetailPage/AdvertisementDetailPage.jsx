@@ -17,7 +17,7 @@ export default function AdvertisementDetailPage() {
       {Object.keys(advertisement).length > 0 ? (
         <AdvertisementDetailBox advertisement={advertisement} />
       ) : (
-        <Preloader/> 
+        <Preloader className="my-5"/> 
       )}
     </div>
   );
