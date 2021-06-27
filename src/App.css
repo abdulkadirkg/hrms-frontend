@@ -86,3 +86,7 @@ select:hover {
 select:focus {
   border-color: #8a9cff!important;
 }
+
+.cursor-pointer{
+  cursor: pointer!important;
+}
