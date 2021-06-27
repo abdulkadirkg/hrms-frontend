@@ -1,5 +1,5 @@
 .logged-in-profile-picture {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   border: 1px solid var(--primaryColor);
 }

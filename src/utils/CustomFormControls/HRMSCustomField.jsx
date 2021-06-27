@@ -1,7 +1,7 @@
 import { useField, Field } from "formik";
 import React from "react";
 
-export default function HRMSTextInput({ ...props }) {
+export default function HRMSCustomField({ ...props }) {
   const [field, meta] = useField(props);
   const { label } = { ...props };
   return (

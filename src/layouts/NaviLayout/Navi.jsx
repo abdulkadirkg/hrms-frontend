@@ -2,7 +2,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navi.css";
 import { Link } from "react-router-dom";
-import "@fortawesome/fontawesome-free"
+import "@fortawesome/fontawesome-free";
 import LoggedIn from "../LoggedInLayout/LoggedIn";
 
 export default function Navi() {

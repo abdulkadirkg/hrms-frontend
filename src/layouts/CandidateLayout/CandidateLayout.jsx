@@ -87,7 +87,7 @@ export default function CandidateLayout({ detailedCandidateDto }) {
             })}
           </div>
           <strong>
-            <i class="fas fa-flag-usa"></i> Yabancı Diller;
+            <i className="fas fa-flag-usa"></i> Yabancı Diller;
           </strong>
           <div className="col-12 my-2 border bg-light rounded px-2 py-1">
             <div className="row p-1 text-muted school-row border-0 border font-weight-bold">
