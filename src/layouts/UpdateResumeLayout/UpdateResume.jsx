@@ -1,23 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useToasts } from "react-toast-notifications";
 import "./UpdateResume.css";
-import HRMSCustomModal from "../../utils/ModalUtil/HRMSCustomModal";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import HRMSCustomField from "../../utils/CustomFormControls/HRMSCustomField";
 import ResumeService from "../../services/resumeService";
 
-export default function UpdateResume({ data }) {
+export default function UpdateResume({  data }) {
   const { addToast } = useToasts();
-  const [_data, setData] = useState(data);
   const initialValues = data;
   const schema = Yup.object({
     resumeText: Yup.string().required("Lütfen Metin Giriniz"),
     isActive: Yup.bool().oneOf([true, false], "Accept Terms & Conditions is required"),
   });
-  useEffect(() => {
-    setData(_data);
-  }, [_data]);
   return (
     <div>
       <Formik

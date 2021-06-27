@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Resume.css";
 import HRMSCustomModal from "../../utils/ModalUtil/HRMSCustomModal";
 import UpdateResume from "../UpdateResumeLayout/UpdateResume";
@@ -22,7 +22,7 @@ export default function Resume({ resumes }) {
           {resumes &&
             resumes.map((resume, index) => {
               return (
-                <HRMSCustomModal key={resume.id} title="Özgeçmişi Güncelle" component={<UpdateResume data={resume} />}>
+                <HRMSCustomModal key={resume.id} title="Özgeçmişi Güncelle" index={index} component={<UpdateResume data={resume} />}>
                   <div className="bg-light my-1 cursor-pointer border rounded p-1">
                     <div className="row">
                       <div className="col-md-12 d-flex flex-column">

@@ -2,14 +2,14 @@ import React from "react";
 import "./HRMSCustomModal.css";
 import { Formik } from "formik";
 export default function HRMSCustomModal({ ...props }) {
-  let { title, component } = { ...props };
+  let { title, component, index } = { ...props };
   return (
     <div>
-      <div data-toggle="modal" data-target="#exampleModalCenter">
+      <div data-toggle="modal" data-target={"#exampleModalCenter" + index}>
         {props.children}
       </div>
 
-      <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div className="modal fade" id={"exampleModalCenter" + index} tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -21,14 +21,6 @@ export default function HRMSCustomModal({ ...props }) {
               </button>
             </div>
             <div className="modal-body p-0">{component}</div>
-            {/* <div className="modal-footer">
-              <button type="button" className="btn btn-outline-danger" data-dismiss="modal">
-                Vazgeç
-              </button>
-              <button type="button" className="btn btn-main text-light">
-                Kaydet
-              </button>
-            </div> */}
           </div>
         </div>
       </div>
