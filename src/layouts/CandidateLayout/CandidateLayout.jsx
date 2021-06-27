@@ -6,6 +6,9 @@ export default function CandidateLayout({ detailedCandidateDto }) {
   let candidate = detailedCandidateDto.candidate;
   let schools = detailedCandidateDto.schools;
   let experiences = detailedCandidateDto.jobExperiences;
+  let resumes = detailedCandidateDto.resumes;
+  let languages = detailedCandidateDto.languages;
+  let programmingLanguages = detailedCandidateDto.programmingLanguages;
   return (
     <div className="container my-4 border-main shadow-sm p-4">
       {candidate ? (
@@ -79,6 +82,23 @@ export default function CandidateLayout({ detailedCandidateDto }) {
                   <div className="col-3 font-weight-bold">{experience.jobPosition}</div>
                   <div className="col-3">{new Date(experience.startDate).toLocaleDateString()}</div>
                   <div className="col-3">{(experience.endDate && new Date(experience.endDate).toLocaleDateString()) || "Devam Ediyor"}</div>
+                </div>
+              );
+            })}
+          </div>
+          <strong>
+            <i class="fas fa-flag-usa"></i> Yabancı Diller;
+          </strong>
+          <div className="col-12 my-2 border bg-light rounded px-2 py-1">
+            <div className="row p-1 text-muted school-row border-0 border font-weight-bold">
+              <div className="col-6">Dil</div>
+              <div className="col-6">Seviye (1 - 10)</div>
+            </div>
+            {languages.map((language) => {
+              return (
+                <div key={language.id} className="row shadow-sm school-row bg-light rounded p-1">
+                  <div className="col-6">{language.languageName}</div>
+                  <div className="col-6">{language.level}</div>
                 </div>
               );
             })}

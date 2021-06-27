@@ -13,4 +13,13 @@
   /* background-color: rgb(233, 233, 233)!important; */
   border: 1px solid #cacaca;
   margin: 5px 0;
+  transition: 0.2s;
+  cursor: pointer;
 }
+
+.school-row:hover:not(:first-child) {
+  /* background-color: rgb(233, 233, 233)!important; */
+  background-color: #ebebeb!important;
+  margin: 5px 0;
+}
+
