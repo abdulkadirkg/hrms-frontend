@@ -3,7 +3,6 @@ import "./ViewCandidateDetailPage.css";
 import CandidateService from "../../../services/candidateService";
 import { useParams } from "react-router-dom";
 import CandidateLayout from "../../../layouts/CandidateLayout/CandidateLayout";
-import ErrorAlert from "../../../utils/ErrorUtil/ErrorAlert";
 export default function ViewCandidateDetailPage() {
   let { id } = useParams();
   const [detailedCandidateDto, setDetailedCandidateDto] = useState({});

@@ -1,0 +1,15 @@
+@media screen and (max-width: 900px) {
+  .d-mobile {
+    display: none;
+  }
+  .d-mobile-img{
+      width: 70px!important;
+      height: 70px!important;
+      margin-top: 10px!important;
+  }
+
+  .sidebar .sidebar-menu .list-group-item{
+      padding: 5px 0 !important;
+      margin: 0!important;
+  }
+}
